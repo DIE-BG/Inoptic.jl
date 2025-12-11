@@ -1,15 +1,13 @@
 # Function linear combination optimal CORR 2022
 
-# Load GT data for last calibration 2022 version
-const GTDATA_CALIB_2022 = dataLastCalibrationBefore2023(Date(2018, 12))
 
 # Define optimal Core MAI, calibrated with data until 2018
 InflationOptimalMaiCORR2022 = let
     # Components of MAI
     maifns = [
         InflationCoreMaiG(GTDATA_CALIB_2022, [0.0, 0.3231946132649845, 0.7717202163095981, 1.0]),
-        InflationCoreMaiFP(GTDATA_CALIB_2022, [0.0, 0.3353888879842171, 0.6564704398723811, 0.7811211272248946, 0.8605862966662162, 1.0]),
-        InflationCoreMaiF(GTDATA_CALIB_2022, [0.0, 0.3184050564725187, 0.6564814400376782, 0.7772641818257944, 0.871023576880708, 1.0]),
+        InflationCoreMaiF(GTDATA_CALIB_2022, [0.0, 0.3353888879842171, 0.6564704398723811, 0.7811211272248946, 0.8605862966662162, 1.0]),
+        InflationCoreMaiFG(GTDATA_CALIB_2022, [0.0, 0.3184050564725187, 0.6564814400376782, 0.7772641818257944, 0.871023576880708, 1.0]),
     ]
 
     # MAI weights
@@ -19,7 +17,7 @@ InflationOptimalMaiCORR2022 = let
     optmai = CombinationFunction(
         maifns...,
         mai_weights,
-        "MAI óptima CORR 2018"
+        "MAI óptima CORR 2022"
     )
 
     optmai

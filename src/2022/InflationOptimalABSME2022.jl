@@ -1,18 +1,17 @@
 # Function of linear combination optimal ABSME 2022
-# Load GT data for last calibration 2022 version
-const GTDATA_CALIB_2022 = dataLastCalibrationBefore2023(Date(2018, 12))
+
 # Define optimal Core MAI, calibrated with data until 2018
 InflationOptimalMaiABSME2022 = let
     # Components of MAI
     maifns = [
-        InflationCoreMaiFP(GTDATA_CALIB_2022, [0.0, 0.2765896107337652, 0.5156337952457809, 0.7052959516853838, 0.8442309350770743, 1.0]),
+        InflationCoreMaiF(GTDATA_CALIB_2022, [0.0, 0.2765896107337652, 0.5156337952457809, 0.7052959516853838, 0.8442309350770743, 1.0]),
         InflationCoreMaiG(GTDATA_CALIB_2022, [0.0, 0.3142507204618185, 0.44857385313176157, 0.7193695351441445, 0.8307072986313512, 1.0]),
-        InflationCoreMaiF(
+        InflationCoreMaiFG(
             GTDATA_CALIB_2022,
             [
-                0.0, 0.20073613992281686, 0.2273231180698717, 0.34266719744949414, 0.4200227663670728,
-                0.5222141864302854, 0.6136934225111135, 0.687520514923968, 0.7467554041219938,
-                0.8572615461459108, 1.0,
+                0.0, 0.20073613992281686, 0.2273231180698717, 0.34266719744949414,
+                0.4200227663670728, 0.5222141864302854, 0.6136934225111135, 0.687520514923968,
+                0.7467554041219938, 0.8572615461459108, 1.0,
             ]
         ),
     ]
@@ -24,10 +23,10 @@ InflationOptimalMaiABSME2022 = let
     optmai = CombinationFunction(
         maifns...,
         mai_weights,
-        "MAI óptima ABSME 2018"
+        "MAI óptima ABSME 2022"
     )
 
-    return optmai
+    optmai
 end
 
 # Define fixed exclusion function

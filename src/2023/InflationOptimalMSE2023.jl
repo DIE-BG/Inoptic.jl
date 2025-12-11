@@ -1,13 +1,13 @@
-# Function of linear combinationMSE 2023
-const GTDATA_CALIB_2023 = dataLastCalibrationBefore2023(Date(2019, 12))
+# Function of linear combination MSE 2023
+
 
 # Define optimal Core MAI, calibrated with data until 2019
 InflationOptimalMaiMSE2023 = let
     # Components of MAI
     maifns = [
-        InflationCoreMai(MaiFP([0.0, 0.276032, 0.718878, 0.757874, 1.0])),
-        InflationCoreMai(MaiF([0.0, 0.382601, 0.667259, 0.82893, 1.0])),
-        InflationCoreMai(MaiG([0.0, 0.0588968, 0.271835, 0.742957, 0.771684, 1.0])),
+        InflationCoreMaiF(GTDATA_CALIB_2023, [0.0, 0.276032, 0.718878, 0.757874, 1.0]),
+        InflationCoreMaiFG(GTDATA_CALIB_2023, [0.0, 0.382601, 0.667259, 0.82893, 1.0]),
+        InflationCoreMaiG(GTDATA_CALIB_2023, [0.0, 0.0588968, 0.271835, 0.742957, 0.771684, 1.0]),
     ]
 
     # MAI weights

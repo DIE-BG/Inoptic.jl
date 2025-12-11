@@ -1,5 +1,5 @@
 # Function of linear combinationABSME 2023
-const GTDATA_CALIB_2023 = dataLastCalibrationBefore2023(Date(2019, 12))
+
 # Define optimal Core MAI, calibrated with data until 2019
 InflationOptimalMaiABSME2023 = let
     # Components of MAI

@@ -1,19 +1,19 @@
 # Function of linear combination optimal MSE 2021
-const CALIBRATION_DATE_2021 = datalastCalibrationBefore2023(Date(2018, 12))
+
 
 # Define Core MAI functions with different parameters. Calibrated with data up to 2018
 InflationOptimalMaiMSE2021 = let
     # Components of core MAI
     maifns = [
-        InflationCoreMaiF(GTDATA_CALIB_2021, 0:(1 / 4):1),
+        InflationCoreMaiFG(GTDATA_CALIB_2021, 0:(1 / 4):1),
         InflationCoreMaiG(GTDATA_CALIB_2021, 0:(1 / 4):1),
-        InflationCoreMaiF(GTDATA_CALIB_2021, 0:(1 / 5):1),
+        InflationCoreMaiFG(GTDATA_CALIB_2021, 0:(1 / 5):1),
         InflationCoreMaiG(GTDATA_CALIB_2021, 0:(1 / 5):1),
-        InflationCoreMaiF(GTDATA_CALIB_2021, 0:(1 / 10):1),
+        InflationCoreMaiFG(GTDATA_CALIB_2021, 0:(1 / 10):1),
         InflationCoreMaiG(GTDATA_CALIB_2021, 0:(1 / 10):1),
-        InflationCoreMaiF(GTDATA_CALIB_2021, 0:(1 / 20):1),
+        InflationCoreMaiFG(GTDATA_CALIB_2021, 0:(1 / 20):1),
         InflationCoreMaiG(GTDATA_CALIB_2021, 0:(1 / 20):1),
-        InflationCoreMaiF(GTDATA_CALIB_2021, 0:(1 / 40):1),
+        InflationCoreMaiFG(GTDATA_CALIB_2021, 0:(1 / 40):1),
         InflationCoreMaiG(GTDATA_CALIB_2021, 0:(1 / 40):1),
 
     ]

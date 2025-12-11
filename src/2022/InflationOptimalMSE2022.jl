@@ -1,15 +1,12 @@
 # Function of linear combinationMSE 2022
 
 
-# Load GT data for last calibration 2022 version
-const GTDATA_CALIB_2022 = dataLastCalibrationBefore2023(Date(2018, 12))
-
 # Define optimal Core MAI, calibrated with data until 2018
 InflationOptimalMaiMSE2022 = let
     # Components of MAI
     maifns = [
-        InflationCoreMaiFP(GTDATA_CALIB_2022, [0.0, 0.3157660216971966, 0.7047420268794217, 0.7854195537102466, 1.0]),
-        InflationCoreMaiF(GTDATA_CALIB_2022, [0.0, 0.31202186036403323, 0.6974472722077761, 0.8209958044003627, 1.0]),
+        InflationCoreMaiF(GTDATA_CALIB_2022, [0.0, 0.3157660216971966, 0.7047420268794217, 0.7854195537102466, 1.0]),
+        InflationCoreMaiFG(GTDATA_CALIB_2022, [0.0, 0.31202186036403323, 0.6974472722077761, 0.8209958044003627, 1.0]),
         InflationCoreMaiG(GTDATA_CALIB_2022, [0.0, 0.05335302029790397, 0.5771838102218124, 0.7498971844656707, 0.7756021151058752, 1.0]),
     ]
 
