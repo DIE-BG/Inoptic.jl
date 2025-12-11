@@ -1,0 +1,79 @@
+# Function of linear combination optimal ABSME 2022
+# Load GT data for last calibration 2022 version
+const GTDATA_CALIB_2022 = dataLastCalibrationBefore2023(Date(2018, 12))
+# Define optimal Core MAI, calibrated with data until 2018
+InflationOptimalMaiABSME2022 = let
+    # Components of MAI
+    maifns = [
+        InflationCoreMaiFP(GTDATA_CALIB_2022, [0.0, 0.2765896107337652, 0.5156337952457809, 0.7052959516853838, 0.8442309350770743, 1.0]),
+        InflationCoreMaiG(GTDATA_CALIB_2022, [0.0, 0.3142507204618185, 0.44857385313176157, 0.7193695351441445, 0.8307072986313512, 1.0]),
+        InflationCoreMaiF(
+            GTDATA_CALIB_2022,
+            [
+                0.0, 0.20073613992281686, 0.2273231180698717, 0.34266719744949414, 0.4200227663670728,
+                0.5222141864302854, 0.6136934225111135, 0.687520514923968, 0.7467554041219938,
+                0.8572615461459108, 1.0,
+            ]
+        ),
+    ]
+
+    # MAI weights
+    mai_weights = Float32[0.5896299, 0.37953162, 0.030924587]
+
+    # Optimal Core MAI by method ABSME
+    optmai = CombinationFunction(
+        maifns...,
+        mai_weights,
+        "MAI óptima ABSME 2018"
+    )
+
+    return optmai
+end
+
+# Define fixed exclusion function
+InflationOptimalFXABSME2022 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162],
+        [29, 116, 31, 46, 39, 40],
+        [],
+        [],
+    )
+)
+
+
+# Define optimal combination MSE 2022, optimized with componentes until 2018
+# and adjusted weights  with data until  2020.
+InflationOptimalABSME2022 = let
+    # Core Inflations components
+    components = [
+        InflationPercentileEq(0.716344f0),
+        InflationPercentileWeighted(0.695585f0),
+        InflationTrimmedMeanEq(35.2881f0, 93.4009f0),
+        InflationTrimmedMeanWeighted(34.1943f0, 93.0f0),
+        InflationDynamicExclusion(1.03194f0, 3.42365f0),
+        InflationOptimalFXABSME2022,
+        InflationOptimalMaiABSME2022,
+    ]
+
+    # Weights of others components
+    absme_weights = Float32[
+        0.164859,
+        0.0822618,
+        0.407029,
+        0.133195,
+        0.152838,
+        0,
+        0.0598154,
+    ]
+
+    # Optimal core ABSME v2022
+    optabsme2022 = CombinationFunction(
+        components...,
+        absme_weights,
+        "Subyacente óptima ABSME 2022"
+    )
+
+    optabsme2022
+end
+
+@info "Definition of optimal functions ABSME" InflationOptimalMaiABSME2022 InflationOptimalFXABSME2022 InflationOptimalABSME2022
