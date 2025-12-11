@@ -7,11 +7,9 @@ using CPIDataGT
 
 using DataFrames
 set_language!(:english)
-CPIDataGT.load_data()
 
 include("helpers.jl")
-# Load GT data
-#CPIDataGT.load_data()
+
 
 ## Optimal functions for 2021 edition -------------------------------
 # Load GT data for last calibration 2021 version
