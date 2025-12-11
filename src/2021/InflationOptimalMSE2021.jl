@@ -69,7 +69,7 @@ InflationOptimalMSE2021 = let
     optmse2021 = CombinationFunction(
         components...,
         mse_weights,
-        "Subyacente óptima MSE 2021"
+        "Optimal MSE Linear Combination (2021 Edition)"
     )
 
     optmse2021

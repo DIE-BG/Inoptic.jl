@@ -100,11 +100,11 @@ c4 = CombinationFunction(
 #d00,d10,d23 = Date(2010,12),Date(2023,12),Date(2024,07)
 InflationOptimalMSE2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
-    name = "Subyacente Óptima MSE 2024 B",
+    name = "Optimal MSE Linear Combination (2024_B Edition)",
     tag = "SubOptMSE_2024_B"
 )
 
-#optmse2024_B = Splice([c1,c2,c3,c4]; dates=[(d00,d00),(d10,d10),(d23,d23)], name="Subyacente Óptima MSE 2024 B", tag="SubOptMSE_2024_B")
+#optmse2024_B = Splice([c1,c2,c3,c4]; dates=[(d00,d00),(d10,d10),(d23,d23)], name="Optimal MSE Linear Combination (2024_B Edition)", tag="SubOptMSE_2024_B")
 
 # optmse2024_ci = DataFrame(
 #     period = ["Período Completo"],
@@ -130,7 +130,7 @@ InflationOptimalMSE2024_B_ci = DataFrame(
 # │         Media Truncada Ponderada (23.0, 95.0) │   0.322878 │      0.20989 │   0.161363 │     0.172707 │ 0.233058 │
 # │    Inflación de exclusión dinámica (0.3, 1.5) │   0.306323 │     0.225251 │   0.117095 │     0.156506 │ 0.203323 │
 # │ Exclusión fija de gastos básicos IPC (13, 18) │   0.840445 │     0.922123 │   0.460784 │     0.523076 │ 0.644412 │
-# │                  Subyacente óptima MSE 2024 B │   0.182145 │     0.129534 │  0.0722566 │    0.0874996 │  0.12209 │
+# │                  Optimal MSE Linear Combination (2024_B Edition) │   0.182145 │     0.129534 │  0.0722566 │    0.0874996 │  0.12209 │
 # └───────────────────────────────────────────────┴────────────┴──────────────┴────────────┴──────────────┴──────────┘
 
 # Inflation Fixed Exclusion Functions

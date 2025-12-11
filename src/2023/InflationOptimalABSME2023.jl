@@ -62,7 +62,7 @@ InflationOptimalABSME2023 = let
     optabsme2023 = CombinationFunction(
         components...,
         absme_weights,
-        "Subyacente óptima ABSME 2023",
+        "Optimal ABSME Linear Combination (2023 Edition) 2023",
         "OPTABSME23"
     )
 

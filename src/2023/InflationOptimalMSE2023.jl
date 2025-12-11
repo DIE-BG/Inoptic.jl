@@ -63,7 +63,7 @@ InflationOptimalMSE2023 = let
     optmse2023 = CombinationFunction(
         components...,
         mse_weights,
-        "Subyacente óptima MSE 2023",
+        "Optimal MSE Linear Combination (2023 Edition)",
         "OPTMSE23"
     )
 

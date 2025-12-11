@@ -96,7 +96,7 @@ c4 = CombinationFunction(
 
 InflationOptimalCORR2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
-    name = "Subyacente Óptima CORR 2024 B",
+    name = "Optimal CORR Linear Combination  (2024_B Edition)",
     tag = "SubOptCORR_2024_B"
 )
 

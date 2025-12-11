@@ -76,7 +76,7 @@ c4 = CombinationFunction(
 
 InflationOptimalABSME2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
-    name = "Subyacente Óptima ABSME 2024 B",
+    name = "Optimal ABSME Linear Combination (2024_B Edition)",
     tag = "SubOptABSME_2024_B"
 )
 
@@ -99,7 +99,7 @@ InflationOptimalABSME2024_ci = DataFrame(
 # │       Media Truncada Ponderada (62.0, 78.0) │     0.237734 │       0.201376 │     0.320162 │    0.000841053 │   0.0746387 │
 # │  Inflación de exclusión dinámica (2.3, 5.0) │     0.166354 │       0.155558 │    0.0274009 │     0.00136838 │   0.0505026 │
 # │ Exclusión fija de gastos básicos IPC (7, 6) │     0.303826 │        1.00973 │      0.43262 │      0.0408153 │    0.402223 │
-# │              Subyacente óptima ABSME 2024 B │     0.047155 │       0.221235 │    0.0217087 │      0.0829893 │ 0.000715202 │
+# │              Optimal ABSME Linear Combination (2024_B Edition) 2024 B │     0.047155 │       0.221235 │    0.0217087 │      0.0829893 │ 0.000715202 │
 # └─────────────────────────────────────────────┴──────────────┴────────────────┴──────────────┴────────────────┴─────────────┘
 
 
