@@ -75,5 +75,3 @@ InflationOptimalABSME2021 = let
 
     optabsme2021
 end
-
-@info "Definition of optimal functions ABSME" InflationOptimalMaiABSME2021 InflationOptimalFXABSME2021 InflationOptimalABSME2021

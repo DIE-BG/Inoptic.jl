@@ -74,5 +74,3 @@ InflationOptimalMSE2021 = let
 
     optmse2021
 end
-
-@info "Definition of optimal functions MSE" InflationOptimalMaiMSE2021 InflationOptimalFXMSE2021 InflationOptimalMSE2021

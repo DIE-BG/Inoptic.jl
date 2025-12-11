@@ -76,5 +76,3 @@ InflationOptimalABSME2023_ci = DataFrame(
     inf_limit = Float32[-0.995903, -0.669305, -0.478735],
     sup_limit = Float32[1.02055, 0.643076, 0.491714]
 )
-
-@info "Definition of optimal functions ABSME" InflationOptimalMaiABSME2023 InflationOptimalFXABSME2023 InflationOptimalABSME2023 InflationOptimalABSME2023_ci

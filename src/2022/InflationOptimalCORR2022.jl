@@ -73,5 +73,3 @@ InflationOptimalCORR2022 = let
 
     optcorr2022
 end
-
-@info "Definition of optimal functions CORR" InflationOptimalMaiCORR2022 InflationOptimalFXCORR2022 InflationOptimalCORR2022

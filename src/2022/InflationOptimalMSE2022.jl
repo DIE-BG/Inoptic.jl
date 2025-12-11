@@ -77,5 +77,3 @@ InflationOptimalMSE2022_ci = DataFrame(
     inf_limit = Float32[-0.8578267216682434, -0.33864724040031435, -0.47227502465248106],
     sup_limit = Float32[1.1448965072631836, 1.7413304984569544, 0.6401736915111531]
 )
-
-@info "Definition of optimal functions MSE" InflationOptimalMaiMSE2022 InflationOptimalFXMSE2022 InflationOptimalMSE2022 InflationOptimalMSE2022_ci
