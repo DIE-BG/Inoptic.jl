@@ -41,7 +41,7 @@ end
 
 # Define fixed exclusion function for ABSME 2021
 """
-    InflationOptimalFXABSME2021 <: InflationFunction
+    InflationOptimalFixedExclusionABSME2021 <: InflationFunction
 
 Core Fixed Exclusion inflation measure,
 based on the ABSME methodology for the 2021 edition.
@@ -49,7 +49,7 @@ based on the ABSME methodology for the 2021 edition.
 """
 
 
-InflationOptimalFXABSME2021 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2021 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -75,7 +75,7 @@ InflationOptimalABSME2021 = let
         InflationTrimmedMeanEq(42.5, 91),
         InflationTrimmedMeanWeighted(52.5, 85),
         InflationDynamicExclusion(0.3524, 1.8829),
-        InflationOptimalFXABSME2021,
+        InflationOptimalFixedExclusionABSME2021,
         InflationOptimalMaiABSME2021,
     ]
 

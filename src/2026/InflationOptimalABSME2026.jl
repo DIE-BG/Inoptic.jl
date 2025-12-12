@@ -151,7 +151,7 @@ InflationOptimalABSME2026 = InflationSpliceUnweighted(
 )
 
 
-InflationOptimalFXABSME2026 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionABSME2026 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162],
     [29, 39, 46, 197, 30, 31, 274, 116, 40],
     [71], [70],

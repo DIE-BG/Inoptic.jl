@@ -32,7 +32,7 @@ InflationOptimalMaiMSE2021 = let
 end
 
 # Define fixed exclusion function
-InflationOptimalFXMSE2021 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionMSE2021 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -58,7 +58,7 @@ InflationOptimalMSE2021 = let
         InflationTrimmedMeanEq(57.5, 84),
         InflationTrimmedMeanWeighted(15, 97),
         InflationDynamicExclusion(0.3222, 1.7283),
-        InflationOptimalFXMSE2021,
+        InflationOptimalFixedExclusionMSE2021,
         InflationOptimalMaiMSE2021,
     ]
 

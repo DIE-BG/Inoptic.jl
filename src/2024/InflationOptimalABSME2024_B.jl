@@ -113,7 +113,7 @@ InflationOptimalABSME2024_ci = DataFrame(
 
 # InflationFixedExlusionCPI
 
-InflationOptimalFXABSME2024_B = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2024_B = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],

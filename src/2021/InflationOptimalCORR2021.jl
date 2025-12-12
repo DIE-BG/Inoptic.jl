@@ -40,14 +40,14 @@ end
 
 #Define fixed exclusion function for CORR 2021
 """
-    InflationOptimalFXCORR2021 <: InflationFunction
+    InflationOptimalFixedExclusionCORR2021 <: InflationFunction
 
 Core Fixed Exclusion inflation measure,
 based on the CORR methodology for the 2021 edition.
 
 """
 
-InflationOptimalFXCORR2021 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionCORR2021 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -72,7 +72,7 @@ InflationOptimalCORR2021 = let
         InflationTrimmedMeanEq(57.5, 92),
         InflationTrimmedMeanWeighted(52.5, 97),
         InflationDynamicExclusion(0.359, 2.5004),
-        InflationOptimalFXCORR2021,
+        InflationOptimalFixedExclusionCORR2021,
         InflationOptimalMaiCORR2021,
     ]
 

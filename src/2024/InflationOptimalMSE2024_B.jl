@@ -143,7 +143,7 @@ InflationOptimalMSE2024_B_ci = DataFrame(
 # Inflation Fixed Exclusion Functions
 
 
-InflationOptimalFXMSE2024_B = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionMSE2024_B = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],

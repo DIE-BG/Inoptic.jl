@@ -53,32 +53,29 @@ ENSEMBLE_CORR_10 = [
 ]
 
 W_CORR_10 = [
-    0.0, #Dynamic Exclusion (0.1, 0.4)
-    0.7523667, #Unweighted Gausssian Smoothing (0.72, 0.06, 0.16, 2.061689)
-    0.020065812, #Unweighted Percentile 76.0
-    0.009280143, #Unweighted Trimmed Mean (60.0, 90.0)
-    0.0077623473, #Fixed Exclusion (month-on-month) (89,)
-    0.0132520795, #Core MAI-G (0.23,0.36,0.63,0.8)
-    0.01882391, #Core MAI-F (0.33,0.67)
-    0.013241161, #Core MAI-FG (0.33,0.67)
-    0.012811849, #Weighted Gausssian Smoothing (0.66, 0.05, 0.2, 2.3176057)
-    0.012617578, #Weighted Percentile 76.5
-    0.01576712, #Weighted Trimmed Mean (55.0, 94.0)
+    6.046281e-7, #Dynamic Exclusion (0.1, 0.4)
+    0.87666655, #Unweighted Gausssian Smoothing (0.72, 0.06, 0.16, 2.061689)
+    0.009405742, #Unweighted Percentile 76.0
+    0.024011951, #Unweighted Trimmed Mean (60.0, 90.0)
+    0.018629983, #Fixed Exclusion (month-on-month) (89,)
+    0.01582567, #Core MAI-G (0.23,0.36,0.63,0.8)
+    0.014843019, #Core MAI-F (0.33,0.67)
+    0.012411265, #Core MAI-FG (0.33,0.67)
+    0.009710376, #Weighted Gausssian Smoothing (0.66, 0.05, 0.2, 2.3176057)
+    0.0066953497, #Weighted Percentile 76.5
+    0.011729125, #Weighted Trimmed Mean (55.0, 94.0)
 ]
 
 OPT_CORR_10 = CombinationFunction(ENSEMBLE_CORR_10..., W_CORR_10)
-
-# Calibration data until october 2025
-
 
 ENSEMBLE_CORR_23 = [
     InflationDynamicExclusion(0.1, 0.48), # 0.54520464
     InflationGSEq(0.66126037, 1.1244905f-5, 0.120075874, 1.1073928), # 0.7519948
     InflationPercentileEq(85), #  0.67394 <---- Valor del CORR
     InflationTrimmedMeanEq(59.0, 89.0), # 0.750371
-    InflationCoreMaiG(GTDATA24_CALIB, [0.25, 0.29, 0.52, 0.64, 0.95]), # 0.901410
-    InflationCoreMaiF(GTDATA24_CALIB, [0.0, 0.95]), # 0.936040
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.0, 0.96]), # 0.882167
+    InflationCoreMaiG(GTDATA24, [0.25, 0.29, 0.52, 0.64, 0.95]), # 0.901410
+    InflationCoreMaiF(GTDATA24, [0.0, 0.95]), # 0.936040
+    InflationCoreMaiFG(GTDATA24, [0.0, 0.96]), # 0.882167
     InflationGSWeighted(0.6046865, 0.00022466603, 0.24588715, 1.9921826), # 0.46641988
     InflationPercentileWeighted(69.5), # 0.429205
     InflationTrimmedMeanWeighted(47.0, 94.0), # 0.4755
@@ -111,9 +108,9 @@ ENSEMBLE_CORR_24 = [
     InflationGSEq(0.66126037, 1.1244905f-5, 0.120075874, 1.1073928), # 0.7519948
     InflationPercentileEq(85), #  0.67394 <---- Valor del CORR
     InflationTrimmedMeanEq(59.0, 89.0), # 0.750371
-    InflationCoreMaiG(GTDATA24_CALIB, [0.25, 0.29, 0.52, 0.64, 0.95]), # 0.901410
-    InflationCoreMaiF(GTDATA24_CALIB, [0.0, 0.95]), # 0.936040
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.0, 0.96]), # 0.882167
+    InflationCoreMaiG(GTDATA24, [0.25, 0.29, 0.52, 0.64, 0.95]), # 0.901410
+    InflationCoreMaiF(GTDATA24, [0.0, 0.95]), # 0.936040
+    InflationCoreMaiFG(GTDATA24, [0.0, 0.96]), # 0.882167
     InflationGSWeighted(0.6046865, 0.00022466603, 0.24588715, 1.9921826), # 0.46641988
     InflationPercentileWeighted(69.5), # 0.429205
     InflationTrimmedMeanWeighted(47.0, 94.0), # 0.4755
@@ -141,6 +138,10 @@ W_CORR_24 = [
 
 OPT_CORR_24 = CombinationFunction(ENSEMBLE_CORR_24..., W_CORR_24)
 
+OPT_CORR = InflationSpliceUnweighted(
+    OPT_CORR_00, OPT_CORR_10, OPT_CORR_23, OPT_CORR_24
+)
+
 """
     InflationOptimalCORR2026 <: InflationSpliceUnweighted
 
@@ -149,18 +150,13 @@ based on the CORR methodology for the 2026 edition.
 
 """
 
-OPT_CORR = InflationSpliceUnweighted(
-    OPT_CORR_00, OPT_CORR_10, OPT_CORR_23, OPT_CORR_24
-)
-
 InflationOptimalCORR2026 = InflationSpliceUnweighted(
     OPT_CORR_00, OPT_CORR_10, OPT_CORR_23, OPT_CORR_24;
     name = "Optimal CORR Linear Combination (2026 Edition)",
     tag = "InflationOptimalCORR2026"
 )
 
-
-InflationOptimalFXCORR2026 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionCORR2026 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193, 27, 28, 191, 188, 33, 38, 50, 161, 24, 6, 42, 163, 185, 25, 39, 195, 160, 4, 194, 216, 103, 179, 109, 2, 102, 45, 189, 15, 3, 154, 97, 101, 192, 155, 200, 55],
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48, 22, 41, 25, 42, 32, 3, 45, 61, 38, 236, 33, 43, 27, 229, 59, 26, 196, 195, 23, 24, 224, 19, 207, 115, 15, 20, 248, 113, 49, 55, 36, 9, 117, 148, 227, 200, 6, 2, 51, 202, 71, 228, 8, 58, 221, 68, 14, 65, 275, 5, 273, 17, 10, 76, 50, 28, 18, 21, 57, 156, 213, 178, 153, 250, 118, 60, 62, 189, 258, 12],
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195, 58, 356, 53, 2, 47, 68, 102, 193, 113, 30, 51, 325, 79, 56, 34, 64, 48, 404, 54, 105, 118, 57, 13, 198, 92, 106, 86, 279, 3, 38, 31, 16, 81, 415, 24, 21, 398, 83, 96, 110, 45, 28, 43, 84, 426, 33, 281, 27, 191, 99, 36, 112, 411, 1, 87, 311, 82, 237, 270, 23, 298, 203, 400, 196, 410, 434, 94, 277, 224, 332, 5, 236, 101, 212, 231, 300, 234, 246, 44, 4, 42, 209, 9, 122, 197, 107, 26, 11, 402, 15, 406, 85, 167, 12, 302, 416, 335, 14, 20, 8, 157, 91, 90, 89, 232, 407, 346, 159, 6],

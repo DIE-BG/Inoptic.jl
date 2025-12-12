@@ -109,7 +109,7 @@ InflationOptimalCORR2024_B = InflationSpliceUnweighted(
 )
 
 ## fixed Exlusion Functions
-InflationOptimalFXCORR2024_B = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionCORR2024_B = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184, 25, 38, 37, 229, 32, 45, 3, 33, 44, 237, 274, 19, 10, 42, 24, 15, 59, 43, 27, 275, 61, 115, 23, 71, 26, 113, 49, 268, 236, 213, 117, 20, 36, 9],

@@ -25,7 +25,7 @@ InflationOptimalMaiCORR2023 = let
 end
 
 # Define fixed exclusion function
-InflationOptimalFXCORR2023 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionCORR2023 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [
@@ -58,7 +58,7 @@ InflationOptimalCORR2023 = let
         InflationTrimmedMeanEq([55.0, 92.0]),
         InflationTrimmedMeanWeighted([53.555, 96.4679]),
         InflationDynamicExclusion([0.46, 4.97]),
-        InflationOptimalFXCORR2023,
+        InflationOptimalFixedExclusionCORR2023,
         InflationOptimalMaiCORR2023,
     ]
 

@@ -24,7 +24,7 @@ InflationOptimalMaiABSME2023 = let
 end
 
 # Define fixed exclusion function
-InflationOptimalFXABSME2023 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2023 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],
@@ -51,7 +51,7 @@ InflationOptimalABSME2023 = let
         InflationTrimmedMeanEq(33.4117f0, 93.7347f0),
         InflationTrimmedMeanWeighted(32.1643f0, 93.2568f0),
         InflationDynamicExclusion(1.0482f0, 3.4888f0),
-        InflationOptimalFXABSME2023,
+        InflationOptimalFixedExclusionABSME2023,
         InflationOptimalMaiABSME2023,
     ]
 

@@ -223,7 +223,7 @@ InflationOptimalRMSE2026Regularized = InflationSpliceUnweighted(
     tag = "InflationOptimalRMSE2026Regularized"
 )
 
-InflationOptimalFXRMSE2026 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionRMSE2026 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
