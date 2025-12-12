@@ -13,6 +13,7 @@ using CPIDataGT
 using DataFrames
 set_language!(:english)
 
+
 include("helpers.jl")
 CPIDataGT.load_data()
 
@@ -36,7 +37,7 @@ $(measure_name(InflationOptimalMSE2021))"
 ##  Optimal functions for 2022 edition----------------------------------
 
 # Load GT data for last calibration 2022 version
-const GTDATA_CALIB_2022 = dataCalibration(Date(2018, 12))
+const GTDATA_CALIB_2022 = dataCalibration(Date(2020, 12))
 export InflationOptimalABSME2022, InflationOptimalFixedExclusionABSME2022, InflationOptimalMaiABSME2022
 include("2022/InflationOptimalABSME2022.jl")
 
@@ -55,6 +56,7 @@ $(measure_name(InflationOptimalMSE2022))"
 # Load GT data for last calibration 2023 version
 const GTDATA_CALIB_2023 = dataCalibration(Date(2021, 12))
 export InflationOptimalABSME2023, InflationOptimalFixedExclusionABSME2023, InflationOptimalMaiABSME2023
+export InflationOptimalABSME2023_ci
 include("2023/InflationOptimalABSME2023.jl")
 
 
@@ -62,6 +64,7 @@ export InflationOptimalCORR2023, InflationOptimalFixedExclusionCORR2023, Inflati
 include("2023/InflationOptimalCORR2023.jl")
 
 export InflationOptimalMSE2023, InflationOptimalFixedExclusionMSE2023, InflationOptimalMaiMSE2023
+export InflationOptimalMSE2023_ci
 include("2023/InflationOptimalMSE2023.jl")
 
 
@@ -73,14 +76,14 @@ $(measure_name(InflationOptimalMSE2023))"
 const GTDATA00 = UniformCountryStructure(GT00)
 
 ## Optimal functions for 2024 B edition----------------------------------
-
-export InflationOptimalABSME2024_B, InflationOptimalFixedExclusionABSME2024_B
+const GTDATA_CALIB_2024 = dataCalibration(Date(2022, 12))
+export InflationOptimalABSME2024_B, InflationOptimalFixedExclusionABSME2024_B, InflationOptimalABSME2024_B_ci
 include("2024/InflationOptimalABSME2024_B.jl")
 
 export InflationOptimalCORR2024_B, InflationOptimalFixedExclusionCORR2024_B
 include("2024/InflationOptimalCORR2024_B.jl")
 
-export InflationOptimalMSE2024_B, InflationOptimalFixedExclusionMSE2024_B
+export InflationOptimalMSE2024_B, InflationOptimalFixedExclusionMSE2024_B, InflationOptimalMSE2024_B_ci
 include("2024/InflationOptimalMSE2024_B.jl")
 
 @info "$(InflationOptimalABSME2024_B.name),

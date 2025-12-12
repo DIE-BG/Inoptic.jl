@@ -22,7 +22,7 @@ function dataCalibration(lastDate::Date)
         data.baseindex,
     )
 
-    return GTDATACALIBRATION = if lastDate > Date(2023, 12)
+    GTDATACALIBRATION = if lastDate > Date(2023, 12)
         MixedCountryStructure(
             GT00,
             GT10,
@@ -35,5 +35,7 @@ function dataCalibration(lastDate::Date)
             GT_LAST_CALIB,
         )
     end
+
+    return GTDATACALIBRATION
 
 end
