@@ -74,6 +74,14 @@ c4 = CombinationFunction(
     w_23
 )
 
+"""
+    InflationOptimalABSME2024_B <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination
+based on the ABSME methodology for the 2024_B edition.
+
+"""
+
 InflationOptimalABSME2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
     name = "Optimal ABSME Linear Combination (2024_B Edition)",

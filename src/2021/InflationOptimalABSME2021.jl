@@ -1,16 +1,14 @@
 # Function of linear combination optimal ABSME 2021
 
 """
-    InflationOptimalABSME2021 <: CombinationFunction
-Core inflation, linear combination optimal measure 
+    InflationOptimalMaiABSME2021 <: CombinationFunction
+
+Core MAI inflation measure, optimal linear combination
 based on the ABSME methodology for the 2021 edition.
 
-    InflationOptimalFXABSME2021 <: CombinationFunction
-Fixed Exclusion function used in the ABSME 2021 optimal measure.
-
-    InflationOptimalMaiABSME2021 <: COmbinationFunction
-Core MAI function used in the ABSME 2021 optimal measure.
 """
+
+
 # Define Core MAI functions with different parameters
 InflationOptimalMaiABSME2021 = let
 
@@ -42,6 +40,14 @@ InflationOptimalMaiABSME2021 = let
 end
 
 # Define fixed exclusion function for ABSME 2021
+"""
+    InflationOptimalFXABSME2021 <: InflationFunction
+
+Core Fixed Exclusion inflation measure,
+based on the ABSME methodology for the 2021 edition.
+
+"""
+
 
 InflationOptimalFXABSME2021 = InflationFixedExclusionCPI{4}(
     (
@@ -53,6 +59,14 @@ InflationOptimalFXABSME2021 = InflationFixedExclusionCPI{4}(
 )
 
 # Define optimal combination function for ABSME 2021
+
+"""
+    InflationOptimalABSME2021 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the ABSME methodology for the 2021 edition.
+
+"""
 InflationOptimalABSME2021 = let
     # Components of core inflation
     components = [

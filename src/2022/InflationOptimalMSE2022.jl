@@ -36,6 +36,14 @@ InflationOptimalFXMSE2022 = InflationFixedExclusionCPI{4}(
 
 # Define optimal combination MSE 2022, optimized with componentes until 2018
 # and adjusted weights  with data until  2020.
+
+"""
+    InflationOptimalMSE2022 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the MSE methodology for the 2022 edition.
+
+"""
 InflationOptimalMSE2022 = let
     # Core Inflations components
     components = [

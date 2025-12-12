@@ -98,6 +98,13 @@ c4 = CombinationFunction(
 )
 
 #d00,d10,d23 = Date(2010,12),Date(2023,12),Date(2024,07)
+"""
+    InflationOptimalMSE2024_B <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination
+based on the MSE methodology for the 2024_B edition.
+
+"""
 InflationOptimalMSE2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
     name = "Optimal MSE Linear Combination (2024_B Edition)",

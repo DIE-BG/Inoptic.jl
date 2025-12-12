@@ -1,12 +1,5 @@
 # Function of linear combination optimal MSE 2021
-"""
-    InflationOptimalMSE2021: Core inflation, linear combination optimal measure 
-based on the MSE methodology for the 2021 edition.
 
-    InflationOptimalFXMSE2021: Fixed Exclusion function used in the MSE 2021 optimal measure.
-
-    InflationOptimalMaiMSE2021: Core MAI function used in the MSE 2021 optimal measure.
-"""
 
 # Define Core MAI functions with different parameters. Calibrated with data up to 2018
 InflationOptimalMaiMSE2021 = let
@@ -49,6 +42,14 @@ InflationOptimalFXMSE2021 = InflationFixedExclusionCPI{4}(
 )
 
 # Define optimal combination MSE 2021.
+
+"""
+    InflationOptimalMSE2021 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the MSE methodology for the 2021 edition.
+
+"""
 InflationOptimalMSE2021 = let
     # Core Inflations components
     components = [

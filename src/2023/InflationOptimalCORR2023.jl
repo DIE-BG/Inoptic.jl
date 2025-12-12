@@ -41,6 +41,15 @@ InflationOptimalFXCORR2023 = InflationFixedExclusionCPI{4}(
 
 # Define optimal combination CORR 2023, optimized with componentes until 2019
 # and adjusted weights  with data until  2021.
+
+"""
+    InflationOptimalCORR2023 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the CORR methodology for the 2023 edition.
+
+"""
+
 InflationOptimalCORR2023 = let
     # Core Inflations components
     components = [

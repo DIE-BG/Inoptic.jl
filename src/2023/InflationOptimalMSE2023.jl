@@ -36,6 +36,13 @@ InflationOptimalFXMSE2023 = InflationFixedExclusionCPI{4}(
 
 # Define optimal combination MSE 2023, optimized with componentes until 2019
 # and adjusted weights  with data until  2021.
+"""
+    InflationOptimalMSE2023 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the MSE methodology for the 2023 edition.
+
+"""
 InflationOptimalMSE2023 = let
     # Core Inflations components
     components = [

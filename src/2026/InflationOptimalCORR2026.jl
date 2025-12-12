@@ -141,6 +141,14 @@ W_CORR_24 = [
 
 OPT_CORR_24 = CombinationFunction(ENSEMBLE_CORR_24..., W_CORR_24)
 
+"""
+    InflationOptimalCORR2026 <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination
+based on the CORR methodology for the 2026 edition.
+
+"""
+
 OPT_CORR = InflationSpliceUnweighted(
     OPT_CORR_00, OPT_CORR_10, OPT_CORR_23, OPT_CORR_24
 )

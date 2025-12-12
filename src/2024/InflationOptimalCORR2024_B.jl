@@ -94,6 +94,14 @@ c4 = CombinationFunction(
     w_23
 )
 
+"""
+    InflationOptimalCORR2024_B <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination
+based on the CORR methodology for the 2024_B edition.
+
+"""
+
 InflationOptimalCORR2024_B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
     name = "Optimal CORR Linear Combination  (2024_B Edition)",

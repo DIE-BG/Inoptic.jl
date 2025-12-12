@@ -201,6 +201,13 @@ OPT_RMSE_24 = CombinationFunction(ENSEMBLE_RMSE_24..., W_RMSE_24)
 OPT_RMSE_24_REGULARIZED = CombinationFunction(ENSEMBLE_RMSE_24..., W_RMSE_24_REGULARIZED)
 
 # Instance of the optimal measures
+"""
+    InflationOptimalRMSE2026 <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination
+based on the RMSE methodology for the 2026 edition.
+
+"""
 InflationOptimalRMSE2026 = InflationSpliceUnweighted(
     OPT_RMSE_00, OPT_RMSE_10, OPT_RMSE_23, OPT_RMSE_24;
     name = "Optimal RMSE Linear Combination (2026 Edition)",

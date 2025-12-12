@@ -1,11 +1,10 @@
 # Function of linear combination optimal CORR 2021
 """
-    InflationOptimalCORR2021: Core inflation, linear combination optimal measure 
+    InflationOptimalMaiCORR2021 <: CombinationFunction
+
+Core MAI inflation measure, optimal linear combination
 based on the CORR methodology for the 2021 edition.
 
-    InflationOptimalFXCORR2021: Fixed Exclusion function used in the CORR 2021 optimal measure.
-
-    InflationOptimalMaiCORR2021: Core MAI function used in the CORR 2021 optimal measure.
 """
 
 
@@ -40,6 +39,14 @@ InflationOptimalMaiCORR2021 = let
 end
 
 #Define fixed exclusion function for CORR 2021
+"""
+    InflationOptimalFXCORR2021 <: InflationFunction
+
+Core Fixed Exclusion inflation measure,
+based on the CORR methodology for the 2021 edition.
+
+"""
+
 InflationOptimalFXCORR2021 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
@@ -50,6 +57,13 @@ InflationOptimalFXCORR2021 = InflationFixedExclusionCPI{4}(
 )
 
 # Define optimal combination CORR 2021.
+"""
+    InflationOptimalCORR2021 <: CombinationFunction
+
+Core inflation measure, optimal linear combination
+based on the CORR methodology for the 2021 edition.
+
+"""
 InflationOptimalCORR2021 = let
     # Core Inflations components
     components = [
