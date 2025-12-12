@@ -74,13 +74,13 @@ const GTDATA00 = UniformCountryStructure(GT00)
 
 ## Optimal functions for 2024 B edition----------------------------------
 
-export InflationOptimalABSME2024, InflationOptimalFXABSME2024_B
+export InflationOptimalABSME2024_B, InflationOptimalFXABSME2024_B
 include("2024/InflationOptimalABSME2024_B.jl")
 
-export InflationOptimalCORR2024, InflationOptimalFXCORR2024_B
+export InflationOptimalCORR2024_B, InflationOptimalFXCORR2024_B
 include("2024/InflationOptimalCORR2024_B.jl")
 
-export InflationOptimalMSE2024, InflationOptimalFXMSE2024_B
+export InflationOptimalMSE2024_B, InflationOptimalFXMSE2024_B
 include("2024/InflationOptimalMSE2024_B.jl")
 
 @info "$(InflationOptimalABSME2024_B.name),

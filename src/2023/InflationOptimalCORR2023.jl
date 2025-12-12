@@ -77,7 +77,7 @@ InflationOptimalCORR2023 = let
     optcorr2023 = CombinationFunction(
         components...,
         corr_weights,
-        "Optimal CORR Linear Combination  (2023 Edition) 2023",
+        "Optimal CORR Linear Combination  (2023 Edition)",
         "OPTCORR23"
     )
 
