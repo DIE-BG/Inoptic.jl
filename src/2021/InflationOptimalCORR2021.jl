@@ -1,4 +1,13 @@
 # Function of linear combination optimal CORR 2021
+"""
+    InflationOptimalCORR2021: Core inflation, linear combination optimal measure 
+based on the CORR methodology for the 2021 edition.
+
+    InflationOptimalFXCORR2021: Fixed Exclusion function used in the CORR 2021 optimal measure.
+
+    InflationOptimalMaiCORR2021: Core MAI function used in the CORR 2021 optimal measure.
+"""
+
 
 # Define core MAI functions with different parameters
 InflationOptimalMaiCORR2021 = let

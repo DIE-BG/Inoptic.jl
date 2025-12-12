@@ -1,3 +1,8 @@
+"""
+    Inoptic.jl 
+A Julia package to save, load the optimal inflation measures
+based on the methodologies developed by the DIE-BG research group.
+"""
 module Inoptic
 
 using InflationFunctions
@@ -9,7 +14,7 @@ using DataFrames
 set_language!(:english)
 
 include("helpers.jl")
-
+CPIDataGT.load_data()
 
 ## Optimal functions for 2021 edition -------------------------------
 # Load GT data for last calibration 2021 version
