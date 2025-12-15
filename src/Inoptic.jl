@@ -75,16 +75,30 @@ $(measure_name(InflationOptimalMSE2023))"
 # Data useful for 2024 and 2026 editions
 const GTDATA00 = UniformCountryStructure(GT00)
 
-## Optimal functions for 2024 B edition----------------------------------
+## Optimal functions for 2024 edition----------------------------------
 const GTDATA_CALIB_2024 = dataCalibration(Date(2022, 12))
+export InflationOptimalABSME2024
+include("2024/InflationOptimalABSME2024.jl")
+
+export InflationOptimalCORR2024
+include("2024/InflationOptimalCORR2024.jl")
+
+export InflationOptimalMSE2024
+include("2024/InflationOptimalMSE2024.jl")
+
+@info "$(InflationOptimalABSME2024.name),
+$(InflationOptimalCORR2024.name),
+$(InflationOptimalMSE2024.name)"
+
+## Optimal functions for 2024 B edition----------------------------------
 export InflationOptimalABSME2024_B, InflationOptimalFixedExclusionABSME2024_B, InflationOptimalABSME2024_B_ci
-include("2024/InflationOptimalABSME2024_B.jl")
+include("2024/2024_B/InflationOptimalABSME2024_B.jl")
 
 export InflationOptimalCORR2024_B, InflationOptimalFixedExclusionCORR2024_B
-include("2024/InflationOptimalCORR2024_B.jl")
+include("2024/2024_B/InflationOptimalCORR2024_B.jl")
 
 export InflationOptimalMSE2024_B, InflationOptimalFixedExclusionMSE2024_B, InflationOptimalMSE2024_B_ci
-include("2024/InflationOptimalMSE2024_B.jl")
+include("2024/2024_B/InflationOptimalMSE2024_B.jl")
 
 @info "$(InflationOptimalABSME2024_B.name),
 $(InflationOptimalCORR2024_B.name),
