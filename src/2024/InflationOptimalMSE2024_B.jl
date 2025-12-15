@@ -142,12 +142,49 @@ InflationOptimalMSE2024_B_ci = DataFrame(
 
 # Inflation Fixed Exclusion Functions
 
-
-InflationOptimalFixedExclusionMSE2024_B = InflationFixedExclusionCPI{4}(
+InfaltionOptimalFixedExclusionMSEb00 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
         [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
         [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
     )
+)
+InfaltionOptimalFixedExclusionMSEb10 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
+        [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
+        [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
+        [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
+    )
+)
+InfaltionOptimalFixedExclusionMSEb23 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
+        [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
+        [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
+        [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
+    )
+)
+
+
+InflationOptimalFixedExclusionMSEb24 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
+        [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
+        [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
+        [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
+    )
+)
+
+
+InflationOptimalFixedExclusionMSE2024_B = InflationSpliceUnweighted(
+    [
+        InfaltionOptimalFixedExclusionMSEb00,
+        InfaltionOptimalFixedExclusionMSEb10,
+        InfaltionOptimalFixedExclusionMSEb23,
+        InflationOptimalFixedExclusionMSEb24,
+    ];
+    name = "Optimal Fixed Exclusion MSE (2024_B Edition)",
+    tag = "OptFixExclMSE_2024_B"
 )

@@ -113,11 +113,50 @@ InflationOptimalABSME2024_B_ci = DataFrame(
 
 # InflationFixedExlusionCPI
 
-InflationOptimalFixedExclusionABSME2024_B = InflationFixedExclusionCPI{4}(
+# Inflation Fixed Exclusion Functions
+
+InfaltionOptimalFixedExclusionABSMEb00 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],
         [65, 69, 71, 77, 80, 195],
         [64, 68, 70, 76, 79, 194],
     )
+)
+InfaltionOptimalFixedExclusionABSMEb10 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162],
+        [29, 31, 116, 39, 46, 40],
+        [65, 69, 71, 77, 80, 195],
+        [64, 68, 70, 76, 79, 194],
+    )
+)
+InfaltionOptimalFixedExclusionABSMEb23 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162],
+        [29, 31, 116, 39, 46, 40],
+        [65, 69, 71, 77, 80, 195],
+        [64, 68, 70, 76, 79, 194],
+    )
+)
+
+InflationOptimalFixedExclusionABSMEb24 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162],
+        [29, 31, 116, 39, 46, 40],
+        [65, 69, 71, 77, 80, 195],
+        [64, 68, 70, 76, 79, 194],
+    )
+)
+
+
+InflationOptimalFixedExclusionABSME2024_B = InflationSpliceUnweighted(
+    [
+        InfaltionOptimalFixedExclusionABSMEb00,
+        InfaltionOptimalFixedExclusionABSMEb10,
+        InfaltionOptimalFixedExclusionABSMEb23,
+        InflationOptimalFixedExclusionABSMEb24,
+    ];
+    name = "Optimal Fixed Exclusion ABSME (2024_B Edition)",
+    tag = "OptFixExclABSME_2024_B"
 )

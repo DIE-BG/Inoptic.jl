@@ -151,8 +151,41 @@ InflationOptimalABSME2026 = InflationSpliceUnweighted(
 )
 
 
-InflationOptimalFixedExclusionABSME2026 = InflationFixedExclusionCPI(
+# Inflation Fixed Exclusion Functions
+
+InfaltionOptimalFixedExclusionABSME2026b00 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162],
     [29, 39, 46, 197, 30, 31, 274, 116, 40],
     [71], [70],
+)
+InfaltionOptimalFixedExclusionABSME2026b10 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162],
+    [29, 39, 46, 197, 30, 31, 274, 116, 40],
+    [71], [70],
+)
+InfaltionOptimalFixedExclusionABSME2026b23 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162],
+    [29, 39, 46, 197, 30, 31, 274, 116, 40],
+    [71], [70],
+)
+
+InflationOptimalFixedExclusionABSME2026b24 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162],
+    [29, 39, 46, 197, 30, 31, 274, 116, 40],
+    [71], [70],
+)
+
+"""
+    InflationOptimalFixedExclusionABSME2026 <: InflationSpliceUnweighted
+
+"""
+InflationOptimalFixedExclusionABSME2026 = InflationSpliceUnweighted(
+    [
+        InfaltionOptimalFixedExclusionABSME2026b00,
+        InfaltionOptimalFixedExclusionABSME2026b10,
+        InfaltionOptimalFixedExclusionABSME2026b23,
+        InflationOptimalFixedExclusionABSME2026b24,
+    ];
+    name = "Optimal Fixed Exclusion ABSME (2026 Edition)",
+    tag = "OptFixExclABSME2026"
 )

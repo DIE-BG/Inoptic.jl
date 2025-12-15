@@ -223,9 +223,44 @@ InflationOptimalRMSE2026Regularized = InflationSpliceUnweighted(
     tag = "InflationOptimalRMSE2026Regularized"
 )
 
-InflationOptimalFixedExclusionRMSE2026 = InflationFixedExclusionCPI(
+# Inflation Fixed Exclusion Functions
+
+InfaltionOptimalFixedExclusionRMSE2026b00 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
     [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
+)
+InfaltionOptimalFixedExclusionRMSE2026b10 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
+    [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
+    [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
+    [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
+)
+InfaltionOptimalFixedExclusionRMSE2026b23 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
+    [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
+    [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
+    [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
+)
+InflationOptimalFixedExclusionRMSE2026b24 = InflationFixedExclusionCPI(
+    [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
+    [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
+    [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
+    [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
+)
+
+"""
+    InflationOptimalFixedExclusionRMSE2026 <: InflationSpliceUnweighted
+
+"""
+InflationOptimalFixedExclusionRMSE2026 = InflationSpliceUnweighted(
+    [
+        InfaltionOptimalFixedExclusionRMSE2026b00,
+        InfaltionOptimalFixedExclusionRMSE2026b10,
+        InfaltionOptimalFixedExclusionRMSE2026b23,
+        InflationOptimalFixedExclusionRMSE2026b24,
+    ];
+    name = "Optimal Fixed Exclusion RMSE (2026 Edition)",
+    tag = "OptFixExclRMSE2026"
 )
