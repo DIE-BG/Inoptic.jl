@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - main
-    tags: ['*']
+    tags: '*'
   pull_request:
-  workflow_dispatch:
 concurrency:
   # Skip intermediate builds: always.
   # Cancel intermediate builds: only if it is a pull request build.
@@ -23,14 +22,15 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '1.6'
+          # - '1.10'
+          - '1.11'
         os:
           - ubuntu-latest
         arch:
           - x64
     steps:
       - uses: actions/checkout@v4
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
