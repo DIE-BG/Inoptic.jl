@@ -105,9 +105,9 @@ ENSEMBLE_RMSE_23 = [
     InflationGSEq(0.8200928, 0.5850182, 0.05166371, 0.32362762), # 0.076663025
     InflationPercentileEq(61.5), # 0.146853 <---- Valor del RMSE
     InflationTrimmedMeanEq(21.0, 88.0), # 0.141866
-    InflationCoreMaiG(GTDATA24_CALIB, [0.04, 0.69, 0.97]), # 0.082798
-    InflationCoreMaiF(GTDATA24_CALIB, [0.08, 0.3, 0.4, 0.52, 0.61, 0.78, 0.95]), # 0.544066
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.11, 0.23, 0.32, 0.43, 0.48, 0.61, 0.72, 0.77, 0.94]), # 0.217182
+    InflationCoreMaiG(GTDATA_CALIB_2026, [0.04, 0.69, 0.97]), # 0.082798
+    InflationCoreMaiF(GTDATA_CALIB_2026, [0.08, 0.3, 0.4, 0.52, 0.61, 0.78, 0.95]), # 0.544066
+    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.11, 0.23, 0.32, 0.43, 0.48, 0.61, 0.72, 0.77, 0.94]), # 0.217182
     InflationGSWeighted(0.44999397, 0.34137973, 0.46160948, 3.1527925), # 0.13493738
     InflationPercentileWeighted(58.5), #  0.161505
     InflationTrimmedMeanWeighted(21.0, 87.0), # 0.149813
@@ -155,9 +155,9 @@ ENSEMBLE_RMSE_24 = [
     InflationGSEq(0.8200928, 0.5850182, 0.05166371, 0.32362762), # 0.076663025
     InflationPercentileEq(61.5), # 0.146853 <---- Valor del RMSE
     InflationTrimmedMeanEq(21.0, 88.0), # 0.141866
-    InflationCoreMaiG(GTDATA24_CALIB, [0.04, 0.69, 0.97]), # 0.082798
-    InflationCoreMaiF(GTDATA24_CALIB, [0.08, 0.3, 0.4, 0.52, 0.61, 0.78, 0.95]), # 0.544066
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.11, 0.23, 0.32, 0.43, 0.48, 0.61, 0.72, 0.77, 0.94]), # 0.217182
+    InflationCoreMaiG(GTDATA_CALIB_2026, [0.04, 0.69, 0.97]), # 0.082798
+    InflationCoreMaiF(GTDATA_CALIB_2026, [0.08, 0.3, 0.4, 0.52, 0.61, 0.78, 0.95]), # 0.544066
+    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.11, 0.23, 0.32, 0.43, 0.48, 0.61, 0.72, 0.77, 0.94]), # 0.217182
     InflationGSWeighted(0.44999397, 0.34137973, 0.46160948, 3.1527925), # 0.13493738
     InflationPercentileWeighted(58.5), #  0.161505
     InflationTrimmedMeanWeighted(21.0, 87.0), # 0.149813
@@ -225,19 +225,19 @@ InflationOptimalRMSE2026Regularized = InflationSpliceUnweighted(
 
 # Inflation Fixed Exclusion Functions
 
-InfaltionOptimalFixedExclusionRMSE2026b00 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionRMSE2026b00 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
     [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
 )
-InfaltionOptimalFixedExclusionRMSE2026b10 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionRMSE2026b10 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
     [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
 )
-InfaltionOptimalFixedExclusionRMSE2026b23 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionRMSE2026b23 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
     [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
     [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
@@ -256,9 +256,9 @@ InflationOptimalFixedExclusionRMSE2026b24 = InflationFixedExclusionCPI(
 """
 InflationOptimalFixedExclusionRMSE2026 = InflationSpliceUnweighted(
     [
-        InfaltionOptimalFixedExclusionRMSE2026b00,
-        InfaltionOptimalFixedExclusionRMSE2026b10,
-        InfaltionOptimalFixedExclusionRMSE2026b23,
+        InflationOptimalFixedExclusionRMSE2026b00,
+        InflationOptimalFixedExclusionRMSE2026b10,
+        InflationOptimalFixedExclusionRMSE2026b23,
         InflationOptimalFixedExclusionRMSE2026b24,
     ];
     name = "Optimal Fixed Exclusion RMSE (2026 Edition)",

@@ -75,21 +75,21 @@ c4 = CombinationFunction(
 )
 
 """
-    InflationOptimalABSME2024_B <: InflationSpliceUnweighted
+    InflationOptimalABSME2024B <: InflationSpliceUnweighted
 
 Core inflation measure, optimal linear combination
-based on the ABSME methodology for the 2024_B edition.
+based on the ABSME methodology for the 2024B edition.
 
 """
 
-InflationOptimalABSME2024_B = InflationSpliceUnweighted(
+InflationOptimalABSME2024B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
-    name = "Optimal ABSME Linear Combination (2024_B Edition)",
-    tag = "SubOptABSME_2024_B"
+    name = "Optimal ABSME Linear Combination (2024B Edition)",
+    tag = "SubOptABSME_2024B"
 )
 
 
-InflationOptimalABSME2024_B_ci = DataFrame(
+InflationOptimalABSME2024B_ci = DataFrame(
     period = ["Período Completo"],
     evalperiod = [CompletePeriod()],
     inf_limit = Float32[-0.78318],
@@ -107,7 +107,7 @@ InflationOptimalABSME2024_B_ci = DataFrame(
 # │       Media Truncada Ponderada (62.0, 78.0) │     0.237734 │       0.201376 │     0.320162 │    0.000841053 │   0.0746387 │
 # │  Inflación de exclusión dinámica (2.3, 5.0) │     0.166354 │       0.155558 │    0.0274009 │     0.00136838 │   0.0505026 │
 # │ Exclusión fija de gastos básicos IPC (7, 6) │     0.303826 │        1.00973 │      0.43262 │      0.0408153 │    0.402223 │
-# │              Optimal ABSME Linear Combination (2024_B Edition) 2024 B │     0.047155 │       0.221235 │    0.0217087 │      0.0829893 │ 0.000715202 │
+# │              Optimal ABSME Linear Combination (2024B Edition) 2024 B │     0.047155 │       0.221235 │    0.0217087 │      0.0829893 │ 0.000715202 │
 # └─────────────────────────────────────────────┴──────────────┴────────────────┴──────────────┴────────────────┴─────────────┘
 
 
@@ -115,7 +115,7 @@ InflationOptimalABSME2024_B_ci = DataFrame(
 
 # Inflation Fixed Exclusion Functions
 
-InfaltionOptimalFixedExclusionABSMEb00 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2024b00 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],
@@ -123,7 +123,7 @@ InfaltionOptimalFixedExclusionABSMEb00 = InflationFixedExclusionCPI{4}(
         [64, 68, 70, 76, 79, 194],
     )
 )
-InfaltionOptimalFixedExclusionABSMEb10 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2024b10 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],
@@ -131,16 +131,7 @@ InfaltionOptimalFixedExclusionABSMEb10 = InflationFixedExclusionCPI{4}(
         [64, 68, 70, 76, 79, 194],
     )
 )
-InfaltionOptimalFixedExclusionABSMEb23 = InflationFixedExclusionCPI{4}(
-    (
-        [35, 30, 190, 36, 37, 40, 31, 104, 162],
-        [29, 31, 116, 39, 46, 40],
-        [65, 69, 71, 77, 80, 195],
-        [64, 68, 70, 76, 79, 194],
-    )
-)
-
-InflationOptimalFixedExclusionABSMEb24 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionABSME2024b23 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162],
         [29, 31, 116, 39, 46, 40],
@@ -149,14 +140,23 @@ InflationOptimalFixedExclusionABSMEb24 = InflationFixedExclusionCPI{4}(
     )
 )
 
+InflationOptimalFixedExclusionABSME2024b24 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162],
+        [29, 31, 116, 39, 46, 40],
+        [65, 69, 71, 77, 80, 195],
+        [64, 68, 70, 76, 79, 194],
+    )
+)
 
-InflationOptimalFixedExclusionABSME2024_B = InflationSpliceUnweighted(
+
+InflationOptimalFixedExclusionABSME2024B = InflationSpliceUnweighted(
     [
-        InfaltionOptimalFixedExclusionABSMEb00,
-        InfaltionOptimalFixedExclusionABSMEb10,
-        InfaltionOptimalFixedExclusionABSMEb23,
-        InflationOptimalFixedExclusionABSMEb24,
+        InflationOptimalFixedExclusionABSME2024b00,
+        InflationOptimalFixedExclusionABSME2024b10,
+        InflationOptimalFixedExclusionABSME2024b23,
+        InflationOptimalFixedExclusionABSME2024b24,
     ];
-    name = "Optimal Fixed Exclusion ABSME (2024_B Edition)",
-    tag = "OptFixExclABSME_2024_B"
+    name = "Optimal Fixed Exclusion ABSME (2024B Edition)",
+    tag = "OptFixExclABSME_2024B"
 )

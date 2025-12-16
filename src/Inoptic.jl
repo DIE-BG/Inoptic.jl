@@ -19,7 +19,7 @@ CPIDataGT.load_data()
 
 ## Optimal functions for 2021 edition -------------------------------
 # Load GT data for last calibration 2021 version
-const GTDATA_CALIB_2021 = dataCalibration(Date(2018, 12))
+const GTDATA_CALIB_2021 = data_calibration(Date(2019, 12))
 
 export InflationOptimalABSME2021, InflationOptimalFixedExclusionABSME2021, InflationOptimalMaiABSME2021
 include("2021/InflationOptimalABSME2021.jl")
@@ -37,7 +37,7 @@ $(measure_name(InflationOptimalMSE2021))"
 ##  Optimal functions for 2022 edition----------------------------------
 
 # Load GT data for last calibration 2022 version
-const GTDATA_CALIB_2022 = dataCalibration(Date(2020, 12))
+const GTDATA_CALIB_2022 = data_calibration(Date(2020, 12))
 export InflationOptimalABSME2022, InflationOptimalFixedExclusionABSME2022, InflationOptimalMaiABSME2022
 include("2022/InflationOptimalABSME2022.jl")
 
@@ -54,7 +54,7 @@ $(measure_name(InflationOptimalMSE2022))"
 ##  Optimal functions for 2023 edition----------------------------------
 
 # Load GT data for last calibration 2023 version
-const GTDATA_CALIB_2023 = dataCalibration(Date(2021, 12))
+const GTDATA_CALIB_2023 = data_calibration(Date(2021, 12))
 export InflationOptimalABSME2023, InflationOptimalFixedExclusionABSME2023, InflationOptimalMaiABSME2023
 export InflationOptimalABSME2023_ci
 include("2023/InflationOptimalABSME2023.jl")
@@ -76,7 +76,7 @@ $(measure_name(InflationOptimalMSE2023))"
 const GTDATA00 = UniformCountryStructure(GT00)
 
 ## Optimal functions for 2024 edition----------------------------------
-const GTDATA_CALIB_2024 = dataCalibration(Date(2022, 12))
+const GTDATA_CALIB_2024 = data_calibration(Date(2022, 12))
 export InflationOptimalABSME2024
 include("2024/InflationOptimalABSME2024.jl")
 
@@ -91,22 +91,22 @@ $(InflationOptimalCORR2024.name),
 $(InflationOptimalMSE2024.name)"
 
 ## Optimal functions for 2024 B edition----------------------------------
-export InflationOptimalABSME2024_B, InflationOptimalFixedExclusionABSME2024_B, InflationOptimalABSME2024_B_ci
-include("2024/2024_B/InflationOptimalABSME2024_B.jl")
+export InflationOptimalABSME2024B, InflationOptimalFixedExclusionABSME2024B, InflationOptimalABSME2024B_ci
+include("2024/2024B/InflationOptimalABSME2024B.jl")
 
-export InflationOptimalCORR2024_B, InflationOptimalFixedExclusionCORR2024_B
-include("2024/2024_B/InflationOptimalCORR2024_B.jl")
+export InflationOptimalCORR2024B, InflationOptimalFixedExclusionCORR2024B
+include("2024/2024B/InflationOptimalCORR2024B.jl")
 
-export InflationOptimalMSE2024_B, InflationOptimalFixedExclusionMSE2024_B, InflationOptimalMSE2024_B_ci
-include("2024/2024_B/InflationOptimalMSE2024_B.jl")
+export InflationOptimalMSE2024B, InflationOptimalFixedExclusionMSE2024B, InflationOptimalMSE2024B_ci
+include("2024/2024B/InflationOptimalMSE2024B.jl")
 
-@info "$(InflationOptimalABSME2024_B.name),
-$(InflationOptimalCORR2024_B.name),
-$(InflationOptimalMSE2024_B.name)"
+@info "$(InflationOptimalABSME2024B.name),
+$(InflationOptimalCORR2024B.name),
+$(InflationOptimalMSE2024B.name)"
 
 ##  Optimal functions for 2026 edition----------------------------------
 # Load GT data for last calibration 2023 version
-const GTDATA24_CALIB = dataCalibration(Date(2025, 10))
+const GTDATA_CALIB_2026 = data_calibration(Date(2025, 10))
 export InflationOptimalABSME2026, InflationOptimalFixedExclusionABSME2026
 include("2026/InflationOptimalABSME2026.jl")
 

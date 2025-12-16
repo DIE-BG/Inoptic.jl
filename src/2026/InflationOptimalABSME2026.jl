@@ -73,9 +73,9 @@ ENSEMBLE_ABSME_23 = [
     InflationGSEq(0.01511252, 0.34270462, 0.99545085, 0.05630284), # 0.014848197
     InflationPercentileEq(62), # 0.127851 <---- Valor del ABSME
     InflationTrimmedMeanEq(20.0, 89.0), # 0.123939
-    InflationCoreMaiG(GTDATA24_CALIB, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
-    InflationCoreMaiF(GTDATA24_CALIB, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
+    InflationCoreMaiG(GTDATA_CALIB_2026, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
+    InflationCoreMaiF(GTDATA_CALIB_2026, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
+    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
     InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # 0.012374846
     InflationPercentileWeighted(59), # 0.129889
     InflationTrimmedMeanWeighted(20.0, 88.0), # 0.121477
@@ -107,9 +107,9 @@ ENSEMBLE_ABSME_24 = [
     InflationGSEq(0.01511252, 0.34270462, 0.99545085, 0.05630284), # 0.014848197
     InflationPercentileEq(62), # 0.127851 <---- Valor del ABSME
     InflationTrimmedMeanEq(20.0, 89.0), # 0.123939
-    InflationCoreMaiG(GTDATA24_CALIB, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
-    InflationCoreMaiF(GTDATA24_CALIB, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
-    InflationCoreMaiFG(GTDATA24_CALIB, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
+    InflationCoreMaiG(GTDATA_CALIB_2026, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
+    InflationCoreMaiF(GTDATA_CALIB_2026, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
+    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
     InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # 0.012374846
     InflationPercentileWeighted(59), # 0.129889
     InflationTrimmedMeanWeighted(20.0, 88.0), # 0.121477
@@ -153,17 +153,17 @@ InflationOptimalABSME2026 = InflationSpliceUnweighted(
 
 # Inflation Fixed Exclusion Functions
 
-InfaltionOptimalFixedExclusionABSME2026b00 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionABSME2026b00 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162],
     [29, 39, 46, 197, 30, 31, 274, 116, 40],
     [71], [70],
 )
-InfaltionOptimalFixedExclusionABSME2026b10 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionABSME2026b10 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162],
     [29, 39, 46, 197, 30, 31, 274, 116, 40],
     [71], [70],
 )
-InfaltionOptimalFixedExclusionABSME2026b23 = InflationFixedExclusionCPI(
+InflationOptimalFixedExclusionABSME2026b23 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162],
     [29, 39, 46, 197, 30, 31, 274, 116, 40],
     [71], [70],
@@ -181,9 +181,9 @@ InflationOptimalFixedExclusionABSME2026b24 = InflationFixedExclusionCPI(
 """
 InflationOptimalFixedExclusionABSME2026 = InflationSpliceUnweighted(
     [
-        InfaltionOptimalFixedExclusionABSME2026b00,
-        InfaltionOptimalFixedExclusionABSME2026b10,
-        InfaltionOptimalFixedExclusionABSME2026b23,
+        InflationOptimalFixedExclusionABSME2026b00,
+        InflationOptimalFixedExclusionABSME2026b10,
+        InflationOptimalFixedExclusionABSME2026b23,
         InflationOptimalFixedExclusionABSME2026b24,
     ];
     name = "Optimal Fixed Exclusion ABSME (2026 Edition)",

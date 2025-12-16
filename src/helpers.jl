@@ -2,16 +2,16 @@
 # Script with some helper functions
 #----------------------------------
 
-function periodsCalibration(initialDate::Date, lastDate::Date)
+function periods_calibration(initialDate::Date, lastDate::Date)
     years_diff = year(lastDate) - year(initialDate)
     months_diff = month(lastDate) - month(initialDate)
     return years_diff * 12 + months_diff + 1
 end
 
 
-function dataCalibration(lastDate::Date)
+function data_calibration(lastDate::Date)
     initialDate = lastDate > Date(2023, 12) ? Date(2025, 1) : Date(2011, 1)
-    periods_calib = periodsCalibration(initialDate, lastDate)
+    periods_calib = periods_calibration(initialDate, lastDate)
 
     data = lastDate > Date(2023, 12) ? GT24 : GT10
 

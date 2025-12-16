@@ -99,19 +99,19 @@ c4 = CombinationFunction(
 
 #d00,d10,d23 = Date(2010,12),Date(2023,12),Date(2024,07)
 """
-    InflationOptimalMSE2024_B <: InflationSpliceUnweighted
+    InflationOptimalMSE2024B <: InflationSpliceUnweighted
 
 Core inflation measure, optimal linear combination
-based on the MSE methodology for the 2024_B edition.
+based on the MSE methodology for the 2024B edition.
 
 """
-InflationOptimalMSE2024_B = InflationSpliceUnweighted(
+InflationOptimalMSE2024B = InflationSpliceUnweighted(
     [c1, c2, c3, c4];
-    name = "Optimal MSE Linear Combination (2024_B Edition)",
-    tag = "SubOptMSE_2024_B"
+    name = "Optimal MSE Linear Combination (2024B Edition)",
+    tag = "SubOptMSE_2024B"
 )
 
-#optmse2024_B = Splice([c1,c2,c3,c4]; dates=[(d00,d00),(d10,d10),(d23,d23)], name="Optimal MSE Linear Combination (2024_B Edition)", tag="SubOptMSE_2024_B")
+#optmse2024B = Splice([c1,c2,c3,c4]; dates=[(d00,d00),(d10,d10),(d23,d23)], name="Optimal MSE Linear Combination (2024B Edition)", tag="SubOptMSE_2024B")
 
 # optmse2024_ci = DataFrame(
 #     period = ["Período Completo"],
@@ -120,7 +120,7 @@ InflationOptimalMSE2024_B = InflationSpliceUnweighted(
 #     sup_limit = Float32[ 0.982193]
 # )
 
-InflationOptimalMSE2024_B_ci = DataFrame(
+InflationOptimalMSE2024B_ci = DataFrame(
     period = ["Base 2000", "Transición 2000-2010", "Base 2010", "Base 2023"],
     evalperiod = [GT_EVAL_B00, GT_EVAL_T0010, GT_EVAL_B10, EvalPeriod(Date(2024, 01), Date(2030, 12), "B23")],
     inf_limit = Float32[-0.7402978062629693, -0.35994996428489634, -0.4897407382726664, -1.0186314582824707],
@@ -137,12 +137,12 @@ InflationOptimalMSE2024_B_ci = DataFrame(
 # │         Media Truncada Ponderada (23.0, 95.0) │   0.322878 │      0.20989 │   0.161363 │     0.172707 │ 0.233058 │
 # │    Inflación de exclusión dinámica (0.3, 1.5) │   0.306323 │     0.225251 │   0.117095 │     0.156506 │ 0.203323 │
 # │ Exclusión fija de gastos básicos IPC (13, 18) │   0.840445 │     0.922123 │   0.460784 │     0.523076 │ 0.644412 │
-# │                  Optimal MSE Linear Combination (2024_B Edition) │   0.182145 │     0.129534 │  0.0722566 │    0.0874996 │  0.12209 │
+# │                  Optimal MSE Linear Combination (2024B Edition) │   0.182145 │     0.129534 │  0.0722566 │    0.0874996 │  0.12209 │
 # └───────────────────────────────────────────────┴────────────┴──────────────┴────────────┴──────────────┴──────────┘
 
 # Inflation Fixed Exclusion Functions
 
-InfaltionOptimalFixedExclusionMSEb00 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionMSE2024b00 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -150,7 +150,7 @@ InfaltionOptimalFixedExclusionMSEb00 = InflationFixedExclusionCPI{4}(
         [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
     )
 )
-InfaltionOptimalFixedExclusionMSEb10 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionMSE2024b10 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -158,17 +158,7 @@ InfaltionOptimalFixedExclusionMSEb10 = InflationFixedExclusionCPI{4}(
         [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
     )
 )
-InfaltionOptimalFixedExclusionMSEb23 = InflationFixedExclusionCPI{4}(
-    (
-        [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
-        [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
-        [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
-        [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
-    )
-)
-
-
-InflationOptimalFixedExclusionMSEb24 = InflationFixedExclusionCPI{4}(
+InflationOptimalFixedExclusionMSE2024b23 = InflationFixedExclusionCPI{4}(
     (
         [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
         [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
@@ -178,13 +168,23 @@ InflationOptimalFixedExclusionMSEb24 = InflationFixedExclusionCPI{4}(
 )
 
 
-InflationOptimalFixedExclusionMSE2024_B = InflationSpliceUnweighted(
+InflationOptimalFixedExclusionMSE2024b24 = InflationFixedExclusionCPI{4}(
+    (
+        [35, 30, 190, 36, 37, 40, 31, 104, 162, 32, 33, 159, 193, 161],
+        [29, 31, 116, 39, 46, 40, 30, 35, 186, 47, 197, 41, 22, 48, 185, 34, 184],
+        [46, 60, 61, 63:69..., 71, 72, 75, 77, 79, 80, 195, 307, 308, 328],
+        [45, 59, 60, 62:68..., 70, 71, 74, 76, 78, 79, 194, 306, 307, 327],
+    )
+)
+
+
+InflationOptimalFixedExclusionMSE2024B = InflationSpliceUnweighted(
     [
-        InfaltionOptimalFixedExclusionMSEb00,
-        InfaltionOptimalFixedExclusionMSEb10,
-        InfaltionOptimalFixedExclusionMSEb23,
-        InflationOptimalFixedExclusionMSEb24,
+        InflationOptimalFixedExclusionMSE2024b00,
+        InflationOptimalFixedExclusionMSE2024b10,
+        InflationOptimalFixedExclusionMSE2024b23,
+        InflationOptimalFixedExclusionMSE2024b24,
     ];
-    name = "Optimal Fixed Exclusion MSE (2024_B Edition)",
-    tag = "OptFixExclMSE_2024_B"
+    name = "Optimal Fixed Exclusion MSE (2024B Edition)",
+    tag = "OptFixExclMSE_2024B"
 )
