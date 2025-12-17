@@ -108,14 +108,14 @@ version = "1.0.9+0"
 [[deps.CPIDataBase]]
 deps = ["AbstractTrees", "DataFrames", "Dates", "PrettyTables"]
 git-tree-sha1 = "aefa62f4ba36be8659ae25cbf78de87229de1c28"
-uuid = "bc2aee9a-d1f8-4cce-8750-9c1afc923989"
-version = "0.6.21"
+uuid = "b57fa2875310d17fb090fddc180ee17642fd84b4"
+version = "0.6.25"
 
 [[deps.CPIDataGT]]
 deps = ["CPIDataBase", "CSV", "DataFrames", "Dates", "JLD2", "Reexport", "Scratch"]
-git-tree-sha1 = "f7c88c34de56750b47de6212a6b3579db2757559"
+git-tree-sha1 = "e67c530e6abc52c088badfc54f14befa210d3a17"
 uuid = "39a16359-57f0-4aba-960c-77dbb3b4d29c"
-version = "0.7.1"
+version = "0.7.2"
 
 [[deps.CSV]]
 deps = ["CodecZlib", "Dates", "FilePathsBase", "InlineStrings", "Mmap", "Parsers", "PooledArrays", "PrecompileTools", "SentinelArrays", "Tables", "Unicode", "WeakRefStrings", "WorkerUtilities"]
@@ -463,9 +463,9 @@ version = "0.3.28"
 
 [[deps.InflationEvalTools]]
 deps = ["CPIDataBase", "CSV", "Chain", "DataFrames", "Dates", "Distributed", "Distributions", "DrWatson", "InflationFunctions", "Ipopt", "JLD2", "JuMP", "LinearAlgebra", "OnlineStats", "Optim", "ProgressMeter", "Random", "Reexport", "SharedArrays", "StableRNGs", "Statistics", "StatsBase", "UnicodePlots"]
-git-tree-sha1 = "e8ac0a06a0533d517913c95e980fd00d046aa34b"
+git-tree-sha1 = "360cdec162d2d589aafb1ff7fdeecdf19f2870cd"
 uuid = "938eba31-db9c-42f6-bde0-f3baed5865b3"
-version = "0.2.0"
+version = "0.5.0"
 
 [[deps.InflationFunctions]]
 deps = ["CPIDataBase", "Dates", "RecipesBase", "SparseArrays", "Statistics", "StatsBase"]
