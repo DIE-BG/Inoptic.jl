@@ -78,4 +78,4 @@ jobs:
             using Documenter: DocMeta, doctest
             using Inoptic
             DocMeta.setdocmeta!(Inoptic, :DocTestSetup, :(using Inoptic); recursive=true)
-            doctest(Inoptic)'
+            doctest(Inoptic)
