@@ -122,7 +122,12 @@ InflationOptimalMSE2024B = InflationSpliceUnweighted(
 
 InflationOptimalMSE2024B_ci = DataFrame(
     period = ["Base 2000", "Transición 2000-2010", "Base 2010", "Base 2023"],
-    evalperiod = [GT_EVAL_B00, GT_EVAL_T0010, GT_EVAL_B10, EvalPeriod(Date(2024, 01), Date(2030, 12), "B23")],
+    evalperiod = [
+        Date(2001, 12):Month(1):Date(2010, 12),
+        Date(2011, 1):Month(1):Date(2011, 11),
+        Date(2011, 12):Month(1):Date(2023, 12),
+        Date(2024, 01):Month(1):Date(2030, 12),
+    ],
     inf_limit = Float32[-0.7402978062629693, -0.35994996428489634, -0.4897407382726664, -1.0186314582824707],
     sup_limit = Float32[1.1579384922981262, 0.8217230200767517, 0.723473072052002, 1.1901130676269531]
 )

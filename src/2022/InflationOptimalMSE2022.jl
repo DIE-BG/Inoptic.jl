@@ -81,7 +81,7 @@ end
 # Confident limits  97.5%
 InflationOptimalMSE2022_ci = DataFrame(
     period = ["Base 2000", "Transición 2000-2010", "Base 2010"],
-    evalperiod = [GT_EVAL_B00, GT_EVAL_T0010, EvalPeriod(Date(2011, 12), Date(2022, 12), "upd20")],
+    evalperiod = [Date(2001, 12):Month(1):Date(2010, 12), Date(2011, 1):Month(1):Date(2011, 11), Date(2011, 12):Month(1):Date(2022, 12)],
     inf_limit = Float32[-0.8578267216682434, -0.33864724040031435, -0.47227502465248106],
     sup_limit = Float32[1.1448965072631836, 1.7413304984569544, 0.6401736915111531]
 )

@@ -5,10 +5,8 @@ based on the methodologies developed by the DIE-BG research group.
 """
 module Inoptic
 
-using InflationFunctions
-using InflationEvalTools
-using CPIDataBase
 using CPIDataGT
+using InflationFunctions
 
 using DataFrames
 #set_language!(:english)

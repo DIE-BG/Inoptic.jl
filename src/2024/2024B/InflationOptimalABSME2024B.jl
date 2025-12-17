@@ -91,7 +91,7 @@ InflationOptimalABSME2024B = InflationSpliceUnweighted(
 
 InflationOptimalABSME2024B_ci = DataFrame(
     period = ["Período Completo"],
-    evalperiod = [CompletePeriod()],
+    evalperiod = ["full: CompletePeriod"],
     inf_limit = Float32[-0.78318],
     sup_limit = Float32[0.973525]
 )
