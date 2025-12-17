@@ -75,7 +75,6 @@ jobs:
       - name: Run doctests
         shell: julia --project=docs --color=yes {0}
         run: |
-          julia --project=docs -e '
             using Documenter: DocMeta, doctest
             using Inoptic
             DocMeta.setdocmeta!(Inoptic, :DocTestSetup, :(using Inoptic); recursive=true)
