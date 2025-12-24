@@ -23,7 +23,7 @@ InflationOptimalMaiABSME2022 = let
     optmai = CombinationFunction(
         maifns...,
         mai_weights,
-        "MAI óptima ABSME 2022"
+        "Optimal MAI ABSME 2022"
     )
 
     optmai
