@@ -231,8 +231,8 @@ InflationOptimalRMSE2026_ci = DataFrame(
     evalperiod = repeat(
         [
             Date(2001, 12):Month(1):Date(2010, 12),
-            Date(2011, 12):Month(1):Date(2023, 12),
-            Date(2024, 12):Month(1):Date(2030, 12),
+            Date(2011, 1):Month(1):Date(2023, 12),
+            Date(2024, 1):Month(1):Date(2030, 12),
         ],
         inner = 6
     ),
