@@ -69,70 +69,88 @@ OPT_ABSME_10 = CombinationFunction(ENSEMBLE_ABSME_10..., W_ABSME_10)
 
 
 ENSEMBLE_ABSME_23 = [
-    InflationDynamicExclusion(0.13, 0.1), # 0.036403127
-    InflationGSEq(0.01511252, 0.34270462, 0.99545085, 0.05630284), # 0.014848197
-    InflationPercentileEq(62), # 0.127851 <---- Valor del ABSME
-    InflationTrimmedMeanEq(20.0, 89.0), # 0.123939
-    InflationCoreMaiG(GTDATA_CALIB_2026, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
-    InflationCoreMaiF(GTDATA_CALIB_2026, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
-    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
-    InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # 0.012374846
-    InflationPercentileWeighted(59), # 0.129889
+    InflationDynamicExclusion(0.13, 0.1), # 0.0512
+    InflationGSEq(0.01511252, 0.34270462, 0.99545085, 0.05630284), # 0.1004
+    InflationPercentileEq(62), # 0.1181
+    InflationTrimmedMeanEq(2.0, 98.0), # 0.0724
+    InflationCoreMaiG(GTDATA_CALIB_2026, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.1879
+    InflationCoreMaiF(GTDATA_CALIB_2026, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.3762
+    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.1476
+    InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # Parameters equivalent to weighted total mean
+    InflationPercentileWeighted(59), # 0.1158
     InflationTrimmedMeanWeighted(20.0, 88.0), # 0.121477
     InflationFixedExclusionCPI(
         [30, 35, 31, 40, 190, 37, 41, 36, 162],
         [29, 39, 46, 197, 30, 31, 274, 116, 40],
-        [71], [70],
+        [71], 
+        [70],
     ), #0.0643999
 ]
 
+# W_ABSME_23 = [
+#     0.029035874, #Dynamic Exclusion (0.13, 0.1)
+#     0.19049612, #Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)
+#     0.0068385475, #Unweighted Percentile 62.0
+#     0.003028404, #Unweighted Trimmed Mean (20.0, 89.0)
+#     0.18576363, #Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
+#     0.08917148, #Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
+#     0.005097635, #Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
+#     0.47622743, #Weighted Gausssian Smoothing (0.39, 0.54, 0.84, 6.2112446)
+#     0.004204538, #Weighted Percentile 59.0
+#     0.010236313, #Weighted Trimmed Mean (20.0, 88.0)
+#     0.0, #Fixed Exclusion (month-on-month) (2,)
+# ]
+
+# Weights including the Unweighted GS
+# W_ABSME_23 = [
+#     0.105486,   #   Dynamic Exclusion (0.13, 0.1)    
+#     0.67581,    #   Unweighted Gausssian Smoothing (…
+#     0.0195984,  #   Unweighted Percentile 62.0       
+#     0.00372118, #   Unweighted Trimmed Mean (20.0, 8…    
+#     0.15414,    #   Core MAI-G (0.1,0.26,0.42,0.55,0…
+#     0.0202271,  #   Core MAI-F (0.13,0.2,0.3,0.4,0.5…
+#     0.00636092, #   Core MAI-FG (0.15,0.26,0.36,0.49…    
+#     0,          #   Weighted GS
+#     0.00341763, #   Weighted Percentile 59.0             
+#     0.0113367,  #   Weighted Trimmed Mean (20.0, 88.…
+#     0,          #   FX
+# ]
+
+# Weights exluding GS methods
+# W_ABSME_23 = [
+#     0.29320553,     # Dynamic Exclusion (0.13, 0.1)
+#     0,              # Unweighted GS
+#     0.006949949,    # Unweighted Percentile 62.0
+#     0.004061812,    # Unweighted Trimmed Mean (20.0, 89.0)
+#     0.30961633,     # Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
+#     0.074539766,    # Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
+#     0.289341,       # Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
+#     0,              # Weighted GS
+#     0.003548709,    # Weighted Percentile 59.0
+#     0.01863697,     # Weighted Trimmed Mean (20.0, 88.0)
+#     0,              # FX
+# ]
+
+# Weights excluding weighted GS and trimmed mean
 W_ABSME_23 = [
-    0.029035874, #Dynamic Exclusion (0.13, 0.1)
-    0.19049612, #Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)
-    0.0068385475, #Unweighted Percentile 62.0
-    0.003028404, #Unweighted Trimmed Mean (20.0, 89.0)
-    0.18576363, #Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
-    0.08917148, #Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
-    0.005097635, #Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
-    0.47622743, #Weighted Gausssian Smoothing (0.39, 0.54, 0.84, 6.2112446)
-    0.004204538, #Weighted Percentile 59.0
-    0.010236313, #Weighted Trimmed Mean (20.0, 88.0)
-    0.0, #Fixed Exclusion (month-on-month) (2,)
+    0.6749528,      # Dynamic Exclusion (0.13, 0.1)  
+    0.0021527,      # Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)  
+    0.0002022,      # Unweighted Percentile 62.0  
+    0.3218284,      # Unweighted Trimmed Mean (2.0, 98.0)  
+    0.0001795,      # Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)  
+    0.0000000,      # Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)  
+    0.0003688,      # Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)  
+    0,              # Weighted Gaussian smoothing
+    0.0002157,      # Weighted Percentile 59.0  
+    0,              # Weighted Trimmed Mean
+    0,              # Fixed exclusion
 ]
 
 OPT_ABSME_23 = CombinationFunction(ENSEMBLE_ABSME_23..., W_ABSME_23)
 
-ENSEMBLE_ABSME_24 = [
-    InflationDynamicExclusion(0.13, 0.1), # 0.036403127
-    InflationGSEq(0.01511252, 0.34270462, 0.99545085, 0.05630284), # 0.014848197
-    InflationPercentileEq(62), # 0.127851 <---- Valor del ABSME
-    InflationTrimmedMeanEq(20.0, 89.0), # 0.123939
-    InflationCoreMaiG(GTDATA_CALIB_2026, [0.1, 0.26, 0.42, 0.55, 0.63, 0.76, 0.87]), # 0.083956
-    InflationCoreMaiF(GTDATA_CALIB_2026, [0.13, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.79, 0.9]), # 0.131867
-    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.186242
-    InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # 0.012374846
-    InflationPercentileWeighted(59), # 0.129889
-    InflationTrimmedMeanWeighted(20.0, 88.0), # 0.121477
-    InflationFixedExclusionCPI(
-        [30, 35, 31, 40, 190, 37, 41, 36, 162],
-        [29, 39, 46, 197, 30, 31, 274, 116, 40],
-        [71], [70],
-    ), #0.0643999
-]
-
-W_ABSME_24 = [
-    0.029035874, #Dynamic Exclusion (0.13, 0.1)
-    0.19049612, #Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)
-    0.0068385475, #Unweighted Percentile 62.0
-    0.003028404, #Unweighted Trimmed Mean (20.0, 89.0)
-    0.18576363, #Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
-    0.08917148, #Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
-    0.005097635, #Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
-    0.47622743, #Weighted Gausssian Smoothing (0.39, 0.54, 0.84, 6.2112446)
-    0.004204538, #Weighted Percentile 59.0
-    0.010236313, #Weighted Trimmed Mean (20.0, 88.0)
-    0.0, #Fixed Exclusion (month-on-month) (2,)
-]
+# Joint CPI base 2023-2024
+ENSEMBLE_ABSME_24 = ENSEMBLE_ABSME_23
+W_ABSME_24 = W_ABSME_23
 
 OPT_ABSME_24 = CombinationFunction(ENSEMBLE_ABSME_24..., W_ABSME_24)
 
