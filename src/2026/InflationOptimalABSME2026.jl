@@ -78,7 +78,7 @@ ENSEMBLE_ABSME_23 = [
     InflationCoreMaiFG(GTDATA_CALIB_2026, [0.15, 0.26, 0.36, 0.49, 0.64, 0.77, 0.93]), # 0.1476
     InflationGSWeighted(0.38506818, 0.53551006, 0.8414891, 6.2112446), # Parameters equivalent to weighted total mean
     InflationPercentileWeighted(59), # 0.1158
-    InflationTrimmedMeanWeighted(20.0, 88.0), # 0.121477
+    InflationTrimmedMeanWeighted(0, 100), # 0.121477
     InflationFixedExclusionCPI(
         [30, 35, 31, 40, 190, 37, 41, 36, 162],
         [29, 39, 46, 197, 30, 31, 274, 116, 40],
@@ -86,6 +86,12 @@ ENSEMBLE_ABSME_23 = [
         [70],
     ), #0.0643999
 ]
+
+# Non-regularized weights for the ABSME metric 
+
+# Weighted Gaussian smoothing and weighted trimmed mean emulated total weighted
+# mean, inducing high volatility, so they are not included in the regularized
+# combination
 
 # W_ABSME_23 = [
 #     0.029035874, #Dynamic Exclusion (0.13, 0.1)
@@ -97,60 +103,32 @@ ENSEMBLE_ABSME_23 = [
 #     0.005097635, #Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
 #     0.47622743, #Weighted Gausssian Smoothing (0.39, 0.54, 0.84, 6.2112446)
 #     0.004204538, #Weighted Percentile 59.0
-#     0.010236313, #Weighted Trimmed Mean (20.0, 88.0)
+#     0.010236313, #Weighted Trimmed Mean (0.0, 88.0)
 #     0.0, #Fixed Exclusion (month-on-month) (2,)
 # ]
 
-# Weights including the Unweighted GS
-# W_ABSME_23 = [
-#     0.105486,   #   Dynamic Exclusion (0.13, 0.1)    
-#     0.67581,    #   Unweighted Gausssian Smoothing (…
-#     0.0195984,  #   Unweighted Percentile 62.0       
-#     0.00372118, #   Unweighted Trimmed Mean (20.0, 8…    
-#     0.15414,    #   Core MAI-G (0.1,0.26,0.42,0.55,0…
-#     0.0202271,  #   Core MAI-F (0.13,0.2,0.3,0.4,0.5…
-#     0.00636092, #   Core MAI-FG (0.15,0.26,0.36,0.49…    
-#     0,          #   Weighted GS
-#     0.00341763, #   Weighted Percentile 59.0             
-#     0.0113367,  #   Weighted Trimmed Mean (20.0, 88.…
-#     0,          #   FX
-# ]
-
-# Weights exluding GS methods
-# W_ABSME_23 = [
-#     0.29320553,     # Dynamic Exclusion (0.13, 0.1)
-#     0,              # Unweighted GS
-#     0.006949949,    # Unweighted Percentile 62.0
-#     0.004061812,    # Unweighted Trimmed Mean (20.0, 89.0)
-#     0.30961633,     # Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
-#     0.074539766,    # Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
-#     0.289341,       # Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
-#     0,              # Weighted GS
-#     0.003548709,    # Weighted Percentile 59.0
-#     0.01863697,     # Weighted Trimmed Mean (20.0, 88.0)
-#     0,              # FX
-# ]
-
-# Weights excluding weighted GS and trimmed mean
-W_ABSME_23 = [
-    0.6749528,      # Dynamic Exclusion (0.13, 0.1)  
-    0.0021527,      # Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)  
-    0.0002022,      # Unweighted Percentile 62.0  
-    0.3218284,      # Unweighted Trimmed Mean (2.0, 98.0)  
-    0.0001795,      # Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)  
-    0.0000000,      # Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)  
-    0.0003688,      # Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)  
-    0,              # Weighted Gaussian smoothing
-    0.0002157,      # Weighted Percentile 59.0  
-    0,              # Weighted Trimmed Mean
-    0,              # Fixed exclusion
+# Regularized weights, excluding weighted Gaussian smoothing and weighted trimmed mean
+W_ABSME_23_REGULARIZED = [
+    0.103914134,    # Dynamic Exclusion (0.13, 0.1)
+    0.33202627 ,    # Unweighted Gausssian Smoothing (0.02, 0.34, 1.0, 0.05630284)
+    0.027889071,    # Unweighted Percentile 62.0
+    0.038830638,    # Unweighted Trimmed Mean (2.0, 98.0)
+    0.3056138  ,    # Core MAI-G (0.1,0.26,0.42,0.55,0.63,0.76,0.87)
+    -5.185e-42 ,    # Core MAI-F (0.13,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9)
+    0.16749501 ,    # Core MAI-FG (0.15,0.26,0.36,0.49,0.64,0.77,0.93)
+    0,              # Weighted Gausssian Smoothing (0.39, 0.54, 0.84, 6.2112446)
+    0.026793065,    # Weighted Percentile 59.0
+    0,              # Weighted Trimmed Mean (0, 100)
+    0,              # Fixed Exclusion (month-on-month) (2,)
 ]
 
-OPT_ABSME_23 = CombinationFunction(ENSEMBLE_ABSME_23..., W_ABSME_23)
+# Note we use the regularized weights for the optimal combination
+OPT_ABSME_23 = CombinationFunction(ENSEMBLE_ABSME_23..., W_ABSME_23_REGULARIZED)
 
 # Joint CPI base 2023-2024
+# So, we use the same optimal combination as in the 2023 CPI base
 ENSEMBLE_ABSME_24 = ENSEMBLE_ABSME_23
-W_ABSME_24 = W_ABSME_23
+W_ABSME_24 = W_ABSME_23_REGULARIZED
 
 OPT_ABSME_24 = CombinationFunction(ENSEMBLE_ABSME_24..., W_ABSME_24)
 
