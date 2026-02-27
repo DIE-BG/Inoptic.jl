@@ -105,7 +105,7 @@ $(InflationOptimalMSE2024B.name)"
 ##  Optimal functions for 2026 edition----------------------------------
 # Load GT data for last calibration 2023 version
 const GTDATA_CALIB_2026 = data_calibration(Date(2025, 10))
-export InflationOptimalABSME2026, InflationOptimalFixedExclusionABSME2026
+export InflationOptimalABSME2026, InflationOptimalFixedExclusionABSME2026, InflationOptimalABSME2026_ci
 include("2026/InflationOptimalABSME2026.jl")
 
 export InflationOptimalCORR2026, InflationOptimalFixedExclusionCORR2026
