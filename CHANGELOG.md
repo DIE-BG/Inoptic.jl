@@ -1,3 +1,8 @@
+## [0.1.2] - 2026-02
+
+### Added
+- Included confidence interval calculations for the `InflationOptimalABSME2026` measure, accessible via `InflationOptimalABSME2026_ci`.
+
 ## [0.1.1] - 2026-02
 
 ### Changed
