@@ -1,3 +1,8 @@
+## [0.1.3] - 2026-04
+
+### Added
+- Implemented the `InflationOptimalRMSE2026B` (note the "B") inflation function. This combination is developed using a complexity-based penalty for each kind of measure to assign more weight to the more "robust" (simpler) measures included in the combination. The unweighted trimmed mean results with the highest weight, thus reducing the volatility of the final combination.
+
 ## [0.1.2] - 2026-02
 
 ### Added
