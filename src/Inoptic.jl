@@ -11,8 +11,9 @@ using InflationFunctions
 using DataFrames
 #set_language!(:english)
 
-
+# Helpers to define fixed-data required for the optimal functions
 include("helpers.jl")
+# Load GT data
 CPIDataGT.load_data()
 
 ## Optimal functions for 2021 edition -------------------------------
@@ -28,9 +29,9 @@ include("2021/InflationOptimalCORR2021.jl")
 export InflationOptimalMSE2021, InflationOptimalFixedExclusionMSE2021, InflationOptimalMaiMSE2021
 include("2021/InflationOptimalMSE2021.jl")
 
-@info "$(measure_name(InflationOptimalABSME2021)),
-$(measure_name(InflationOptimalCORR2021)),
-$(measure_name(InflationOptimalMSE2021))"
+# @info "$(measure_name(InflationOptimalABSME2021)),
+# $(measure_name(InflationOptimalCORR2021)),
+# $(measure_name(InflationOptimalMSE2021))"
 
 ##  Optimal functions for 2022 edition----------------------------------
 
@@ -45,9 +46,9 @@ include("2022/InflationOptimalCORR2022.jl")
 export InflationOptimalMSE2022, InflationOptimalFixedExclusionMSE2022, InflationOptimalMaiMSE2022
 include("2022/InflationOptimalMSE2022.jl")
 
-@info "$(measure_name(InflationOptimalABSME2022)),
-$(measure_name(InflationOptimalCORR2022)),
-$(measure_name(InflationOptimalMSE2022))"
+# @info "$(measure_name(InflationOptimalABSME2022)),
+# $(measure_name(InflationOptimalCORR2022)),
+# $(measure_name(InflationOptimalMSE2022))"
 
 ##  Optimal functions for 2023 edition----------------------------------
 
@@ -66,9 +67,9 @@ export InflationOptimalMSE2023_ci
 include("2023/InflationOptimalMSE2023.jl")
 
 
-@info "$(measure_name(InflationOptimalABSME2023)),
-$(measure_name(InflationOptimalCORR2023)),
-$(measure_name(InflationOptimalMSE2023))"
+# @info "$(measure_name(InflationOptimalABSME2023)),
+# $(measure_name(InflationOptimalCORR2023)),
+# $(measure_name(InflationOptimalMSE2023))"
 
 # Data useful for 2024 and 2026 editions
 const GTDATA00 = UniformCountryStructure(GT00)
@@ -84,9 +85,9 @@ include("2024/InflationOptimalCORR2024.jl")
 export InflationOptimalMSE2024
 include("2024/InflationOptimalMSE2024.jl")
 
-@info "$(InflationOptimalABSME2024.name),
-$(InflationOptimalCORR2024.name),
-$(InflationOptimalMSE2024.name)"
+# @info "$(InflationOptimalABSME2024.name),
+# $(InflationOptimalCORR2024.name),
+# $(InflationOptimalMSE2024.name)"
 
 ## Optimal functions for 2024 B edition----------------------------------
 export InflationOptimalABSME2024B, InflationOptimalFixedExclusionABSME2024B, InflationOptimalABSME2024B_ci
@@ -98,9 +99,9 @@ include("2024/2024B/InflationOptimalCORR2024B.jl")
 export InflationOptimalMSE2024B, InflationOptimalFixedExclusionMSE2024B, InflationOptimalMSE2024B_ci
 include("2024/2024B/InflationOptimalMSE2024B.jl")
 
-@info "$(InflationOptimalABSME2024B.name),
-$(InflationOptimalCORR2024B.name),
-$(InflationOptimalMSE2024B.name)"
+# @info "$(InflationOptimalABSME2024B.name),
+# $(InflationOptimalCORR2024B.name),
+# $(InflationOptimalMSE2024B.name)"
 
 ##  Optimal functions for 2026 edition----------------------------------
 # Load GT data for last calibration 2023 version
