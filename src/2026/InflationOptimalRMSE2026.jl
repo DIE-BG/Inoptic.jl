@@ -153,7 +153,7 @@ W_RMSE_23_B = [
     0.019724239,   # Dynamic Exclusion (0.13, 0.1)
     0.009505227,   # Unweighted Gausssian Smoothing (0.82, 0.59, 0.05, 0.32362762)
     2.0164892e-7,  # Unweighted Percentile 61.5
-    0.926568,      # Unweighted Trimmed Mean (21.0, 88.0) 
+    0.926568,      # Unweighted Trimmed Mean (21.0, 88.0)
     0.0069095925,  # Core MAI-G (0.04,0.69,0.97)
     0.019066952,   # Core MAI-F (0.08,0.3,0.4,0.52,0.61,0.78,0.95)
     0.014972307,   # Core MAI-FG (0.11,0.23,0.32,0.43,0.48,0.61,0.72,0.77,0.94)
@@ -166,7 +166,7 @@ W_RMSE_23_B = [
 OPT_RMSE_23 = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23)
 # One regularized version to spread the weights away from 0
 OPT_RMSE_23_REGULARIZED = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23_REGULARIZED)
-# And a "B" version of the optimal combination, with complexity-based weights 
+# And a "B" version of the optimal combination, with complexity-based weights
 OPT_RMSE_23_B = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23_B)
 
 # For the 2024 CPI base, we use the same combined calibration of the 2023-2024 combined base
@@ -212,7 +212,7 @@ Core inflation measure, optimal linear combination based on the RMSE methodology
 We use a complexity-based penalty for each kind of measure to assign more weight to the "robust" (simpler) measures
 """
 InflationOptimalRMSE2026B = InflationSpliceUnweighted(
-    OPT_RMSE_00, OPT_RMSE_10, OPT_RMSE_23, OPT_RMSE_24;
+    OPT_RMSE_00, OPT_RMSE_10, OPT_RMSE_23_B, OPT_RMSE_24_B;
     name = "Optimal RMSE Linear Combination (2026 B Regularized)",
     tag = "InflationOptimalRMSE2026B"
 )
@@ -273,10 +273,10 @@ InflationOptimalRMSE2026_ci = DataFrame(
     confidence = repeat([0.8, 0.85, 0.9, 0.95, 0.975, 0.995], outer = 3)
 )
 
-# Confidence intervals for the B optimal combination 
+# Confidence intervals for the B optimal combination
 # NOTE: These values are just placeholders, as we haven't computed the actual
-# confidence intervals for the B version of the optimal combination yet. 
-InflationOptimalRMSE2026B_ci = copy(InflationOptimalRMSE2026_ci) 
+# confidence intervals for the B version of the optimal combination yet.
+InflationOptimalRMSE2026B_ci = copy(InflationOptimalRMSE2026_ci)
 
 
 ## Inflation Fixed Exclusion Functions
