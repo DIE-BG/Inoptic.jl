@@ -147,58 +147,37 @@ W_RMSE_23_REGULARIZED = [
     0.0, #Fixed Exclusion (month-on-month) (36,)
 ]
 
+# Complexity-based weights for the "B" version of the optimal combination: We
+# assign more weight to the "robust" (simpler) measures
+W_RMSE_23_B = [
+    0.019724239,   # Dynamic Exclusion (0.13, 0.1)
+    0.009505227,   # Unweighted Gausssian Smoothing (0.82, 0.59, 0.05, 0.32362762)
+    2.0164892e-7,  # Unweighted Percentile 61.5
+    0.926568,      # Unweighted Trimmed Mean (21.0, 88.0) 
+    0.0069095925,  # Core MAI-G (0.04,0.69,0.97)
+    0.019066952,   # Core MAI-F (0.08,0.3,0.4,0.52,0.61,0.78,0.95)
+    0.014972307,   # Core MAI-FG (0.11,0.23,0.32,0.43,0.48,0.61,0.72,0.77,0.94)
+    0.0032489155,  # Weighted Gausssian Smoothing (0.45, 0.34, 0.46, 3.1527925)
+    7.3039686e-8,  # Weighted Percentile 58.5
+    4.490031e-6,   # Weighted Trimmed Mean (21.0, 87.0)
+    0.0,           # Fixed Exclusion (month-on-month) (36,)
+]
+
 OPT_RMSE_23 = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23)
+# One regularized version to spread the weights away from 0
 OPT_RMSE_23_REGULARIZED = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23_REGULARIZED)
+# And a "B" version of the optimal combination, with complexity-based weights 
+OPT_RMSE_23_B = CombinationFunction(ENSEMBLE_RMSE_23..., W_RMSE_23_B)
 
-ENSEMBLE_RMSE_24 = [
-    InflationDynamicExclusion(0.13, 0.1), # 0.09307264
-    InflationGSEq(0.8200928, 0.5850182, 0.05166371, 0.32362762), # 0.076663025
-    InflationPercentileEq(61.5), # 0.146853 <---- Valor del RMSE
-    InflationTrimmedMeanEq(21.0, 88.0), # 0.141866
-    InflationCoreMaiG(GTDATA_CALIB_2026, [0.04, 0.69, 0.97]), # 0.082798
-    InflationCoreMaiF(GTDATA_CALIB_2026, [0.08, 0.3, 0.4, 0.52, 0.61, 0.78, 0.95]), # 0.544066
-    InflationCoreMaiFG(GTDATA_CALIB_2026, [0.11, 0.23, 0.32, 0.43, 0.48, 0.61, 0.72, 0.77, 0.94]), # 0.217182
-    InflationGSWeighted(0.44999397, 0.34137973, 0.46160948, 3.1527925), # 0.13493738
-    InflationPercentileWeighted(58.5), #  0.161505
-    InflationTrimmedMeanWeighted(21.0, 87.0), # 0.149813
-    InflationFixedExclusionCPI(
-        [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00
-        [29, 39, 46, 197, 30, 31, 274, 116, 40, 35, 186, 47, 37, 185, 237, 34, 184, 44, 48], #10
-        [71, 328, 52, 69, 72, 74, 73, 49, 63, 75, 80, 60, 77, 46, 65, 62, 238, 370, 194, 78, 61, 59, 315, 66, 50, 67, 378, 70, 308, 307, 216, 76, 55, 98, 88, 195], #23
-        [70, 327, 51, 68, 71, 73, 72, 48, 62, 74, 79, 59, 76, 45, 64, 61, 237, 369, 193, 77, 60, 58, 314, 65, 49, 66, 377, 69, 307, 306, 215, 75, 54, 97, 87, 194], #24
-    ), #0.110352
-]
-
-W_RMSE_24 = [
-    0.10529911, #Dynamic Exclusion (0.13, 0.1)
-    0.53805065, #Unweighted Gausssian Smoothing (0.82, 0.59, 0.05, 0.32362762)
-    0.00000020937125, #Unweighted Percentile 61.5
-    0.0000010857873, #Unweighted Trimmed Mean (21.0, 88.0)
-    0.009465043, #Core MAI-G (0.04,0.69,0.97)
-    0.11158516, #Core MAI-F (0.08,0.3,0.4,0.52,0.61,0.78,0.95)
-    0.2356902, #Core MAI-FG (0.11,0.23,0.32,0.43,0.48,0.61,0.72,0.77,0.94)
-    0.0000024002002, #Weighted Gausssian Smoothing (0.45, 0.34, 0.46, 3.1527925)
-    0.0000007303269, #Weighted Percentile 58.5
-    0.000005406305, #Weighted Trimmed Mean (21.0, 87.0)
-    0.0, #Fixed Exclusion (month-on-month) (36,)
-]
-
-W_RMSE_24_REGULARIZED = [
-    0.10970265, #Dynamic Exclusion (0.13, 0.1)
-    0.10774889, #Unweighted Gausssian Smoothing (0.82, 0.59, 0.05, 0.32362762)
-    0.07122856, #Unweighted Percentile 61.5
-    0.07356738, #Unweighted Trimmed Mean (21.0, 88.0)
-    0.06934129, #Core MAI-G (0.04,0.69,0.97)
-    0.20713921, #Core MAI-F (0.08,0.3,0.4,0.52,0.61,0.78,0.95)
-    0.15263869, #Core MAI-FG (0.11,0.23,0.32,0.43,0.48,0.61,0.72,0.77,0.94)
-    0.07267335, #Weighted Gausssian Smoothing (0.45, 0.34, 0.46, 3.1527925)
-    0.06611479, #Weighted Percentile 58.5
-    0.0698452, #Weighted Trimmed Mean (21.0, 87.0)
-    0.0, #Fixed Exclusion (month-on-month) (36,)
-]
+# For the 2024 CPI base, we use the same combined calibration of the 2023-2024 combined base
+ENSEMBLE_RMSE_24 = ENSEMBLE_RMSE_23
+W_RMSE_24 = W_RMSE_23
+W_RMSE_24_REGULARIZED = W_RMSE_23_REGULARIZED
+W_RMSE_24_B = W_RMSE_23_B
 
 OPT_RMSE_24 = CombinationFunction(ENSEMBLE_RMSE_24..., W_RMSE_24)
 OPT_RMSE_24_REGULARIZED = CombinationFunction(ENSEMBLE_RMSE_24..., W_RMSE_24_REGULARIZED)
+OPT_RMSE_24_B = CombinationFunction(ENSEMBLE_RMSE_24..., W_RMSE_24_B)
 
 # Instance of the optimal measures
 """
@@ -223,6 +202,21 @@ InflationOptimalRMSE2026Regularized = InflationSpliceUnweighted(
     tag = "InflationOptimalRMSE2026Regularized"
 )
 
+# Regularized "B" version of the optimal combination: We use a complexity-based
+# penalty for each kind of measure to assign more weight to the "robust"
+# (simpler) measures
+"""
+    InflationOptimalRMSE2026B <: InflationSpliceUnweighted
+
+Core inflation measure, optimal linear combination based on the RMSE methodology for the 2026 edition.
+We use a complexity-based penalty for each kind of measure to assign more weight to the "robust" (simpler) measures
+"""
+InflationOptimalRMSE2026B = InflationSpliceUnweighted(
+    OPT_RMSE_00, OPT_RMSE_10, OPT_RMSE_23, OPT_RMSE_24;
+    name = "Optimal RMSE Linear Combination (2026 B Regularized)",
+    tag = "InflationOptimalRMSE2026B"
+)
+
 
 ## Inflation Optimal RMSE confident intervals
 
@@ -236,7 +230,6 @@ InflationOptimalRMSE2026_ci = DataFrame(
         ],
         inner = 6
     ),
-
     limits_all_measures = [
         (-0.5221128463745117, 0.7300508022308361),
         (-0.596034049987793, 0.8307465553283686),
@@ -256,8 +249,6 @@ InflationOptimalRMSE2026_ci = DataFrame(
         (-0.3073829412460327, 0.5013704299926758),
         (-0.37333041429519653, 0.5699397623538971),
         (-0.4816058874130249, 0.6815910935401917),
-
-
     ],
     limits_opt_combination = [
         (-0.379011344909668, 0.4381612300872803),
@@ -278,16 +269,17 @@ InflationOptimalRMSE2026_ci = DataFrame(
         (-0.1680258721113205, 0.1919626891613006),
         (-0.1867515742778778, 0.22070285677909873),
         (-0.2079521656036377, 0.24862127363681644),
-
-
     ],
-
     confidence = repeat([0.8, 0.85, 0.9, 0.95, 0.975, 0.995], outer = 3)
-
 )
 
+# Confidence intervals for the B optimal combination 
+# NOTE: These values are just placeholders, as we haven't computed the actual
+# confidence intervals for the B version of the optimal combination yet. 
+InflationOptimalRMSE2026B_ci = copy(InflationOptimalRMSE2026_ci) 
 
-# Inflation Fixed Exclusion Functions
+
+## Inflation Fixed Exclusion Functions
 
 InflationOptimalFixedExclusionRMSE2026b00 = InflationFixedExclusionCPI(
     [30, 35, 31, 40, 190, 37, 41, 36, 162, 34, 23, 26, 104, 51, 32, 186, 159, 193], #00

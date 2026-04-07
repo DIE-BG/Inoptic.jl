@@ -112,6 +112,7 @@ export InflationOptimalCORR2026, InflationOptimalFixedExclusionCORR2026
 include("2026/InflationOptimalCORR2026.jl")
 
 export InflationOptimalRMSE2026, InflationOptimalFixedExclusionRMSE2026, InflationOptimalRMSE2026_ci
+export InflationOptimalRMSE2026, InflationOptimalRMSE2026B_ci
 include("2026/InflationOptimalRMSE2026.jl")
 
 
