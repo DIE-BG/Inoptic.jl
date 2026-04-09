@@ -1,6 +1,6 @@
 name = "Inoptic"
 uuid = "8f5dd8e8-af9a-4b7e-898c-9283934a1a2b"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["DIE-BG contributors"]
 
 [deps]
