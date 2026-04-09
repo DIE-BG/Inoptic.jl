@@ -1,3 +1,8 @@
+## [0.1.4] - 2026-04
+
+### Changed
+- Updated the confidence intervals for the `InflationOptimalRMSE2026B` in the period of the 2023-2024 CPI bases. Computed by @m4wnn in https://github.com/DIE-BG/BTIMA_GT_2025/pull/45.
+
 ## [0.1.3] - 2026-04
 
 ### Added
